@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.itstep</groupId>
-	<artifactId>diploma</artifactId>
+	<artifactId>diploma-itstep</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>diploma-itstep</name>
 	<description>Demo project for Spring Boot</description>
