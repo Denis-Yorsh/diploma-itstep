@@ -22,6 +22,7 @@ public class test {
 	}
 	public void asdf(){}
 	public void asdf3(){}
+	public void asdf34(){}
 	public void asdf1(){
 		System.out.println("asd");
 	}
