@@ -1,0 +1,1229 @@
+header nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: rgba(170, 246, 227, 0.3);
+}
+
+header nav a {
+  font-size: 2vw;
+}
+
+ .u-section-11 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../images/beachToursPage/8e9ceff0-8e0b-a65c-b3aa-d14881f4510a.jpg");
+  background-position: 0% 50%;
+}
+
+.u-section-11 .u-sheet-11 {
+  min-height: 804px;
+}
+
+.u-section-11 .u-group-11 {
+  width: 475px;
+  min-height: 626px;
+  margin: 60px 0 60px auto;
+}
+
+.u-section-11 .u-container-layout-11 {
+  padding: 30px;
+}
+
+.u-section-11 .u-text-11 {
+  margin-top: 0;
+  font-size: 3.75rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.u-section-11 .u-text-21 {
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.u-section-11 .u-btn-11 {
+  border-style: solid;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 20px auto 0 0;
+  padding: 10px 62px;
+}
+
+.u-section-11 .u-text-31 {
+  margin: 20px 0 0;
+}
+
+.u-section-11 .u-btn-21 {
+  border-style: solid;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-11 .u-sheet-11 {
+    min-height: 652px;
+  }
+
+  .u-section-11 .u-group-11 {
+    width: 447px;
+    min-height: 536px;
+  }
+
+  .u-section-11 .u-text-11 {
+    font-size: 3.33333rem;
+  }
+}
+
+@media (max-width: 991px) {
+   .u-section-11 {
+    background-position: 21.04% 50%;
+  }
+
+  .u-section-11 .u-sheet-11 {
+    min-height: 635px;
+  }
+
+  .u-section-11 .u-group-11 {
+    width: 360px;
+    min-height: 555px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .u-section-11 .u-text-11 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-11 .u-sheet-11 {
+    min-height: 581px;
+  }
+
+  .u-section-11 .u-group-11 {
+    width: 309px;
+    min-height: 511px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .u-section-11 .u-container-layout-11 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-section-11 .u-text-11 {
+    font-size: 2.2777777777777777rem;
+  }
+
+  .u-section-11 .u-text-21 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-11 {
+    background-size: auto 130%;
+  }
+
+  .u-section-11 .u-sheet-11 {
+    min-height: 804px;
+  }
+
+  .u-section-11 .u-group-11 {
+    width: 322px;
+    min-height: 598px;
+    margin-top: 166px;
+    margin-bottom: 40px;
+  }
+
+  .u-section-11 .u-btn-11 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.u-section-31 .u-sheet-11 {
+  min-height: 1320px;
+}
+
+.u-section-31 .u-text-11 {
+  margin: 70px 460px 0 0;
+}
+
+.u-section-31 .u-text-21 {
+  line-height: 1.8;
+  font-size: 1.125rem;
+  margin: 24px 460px 0 0;
+}
+
+.u-section-31 .u-text-31 {
+  font-size: 1rem;
+  letter-spacing: 0px;
+  font-style: italic;
+  margin: 24px 922px 0 0;
+}
+
+.u-section-31 .u-btn-11 {
+  border-style: solid;
+  font-style: italic;
+  padding: 0;
+}
+
+.u-section-31 .u-btn-21 {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  align-self: center;
+  background-image: none;
+  margin: 27px auto 0 0;
+  padding: 15px 41px 16px 39px;
+}
+
+.u-section-31 .u-image-11 {
+  width: 272px;
+  height: 272px;
+  background-image: url("../images/beachToursPage/dce57511-603c-4a9d-ac99-d75c117a6b7d.jpg");
+  background-position: 50% 50%;
+  margin: 75px auto 0 61px;
+}
+
+.u-section-31 .u-image-21 {
+  width: 526px;
+  height: 526px;
+  background-image: url("../images/beachToursPage/gfg.jpg");
+  background-position: 50% 50%;
+  margin: -234px auto 0 208px;
+}
+
+.u-section-31 .u-image-31 {
+  width: 300px;
+  height: 300px;
+  background-image: url("../images/beachToursPage/fddf.jpg");
+  background-position: 50% 50%;
+  margin: -732px 85px 0 auto;
+}
+
+.u-section-31 .u-shape-11 {
+  width: 228px;
+  height: 228px;
+  background-image: none;
+  margin: 239px 799px 0 auto;
+}
+
+.u-section-31 .u-shape-21 {
+  width: 164px;
+  height: 164px;
+  margin: -242px 134px 60px auto;
+}
+
+@media (max-width: 1199px) {
+  .u-section-31 .u-sheet-11 {
+    min-height: 1289px;
+  }
+
+  .u-section-31 .u-text-11 {
+    margin-right: 260px;
+  }
+
+  .u-section-31 .u-text-21 {
+    margin-right: 260px;
+  }
+
+  .u-section-31 .u-text-31 {
+    margin-right: 722px;
+  }
+
+  .u-section-31 .u-btn-21 {
+    border-style: none;
+  }
+
+  .u-section-31 .u-image-11 {
+    margin-top: 70px;
+    margin-left: 7px;
+  }
+
+  .u-section-31 .u-image-21 {
+    margin-top: -229px;
+    margin-left: 168px;
+  }
+
+  .u-section-31 .u-image-31 {
+    margin-top: -833px;
+    margin-right: 27px;
+  }
+
+  .u-section-31 .u-shape-11 {
+    margin-top: 374px;
+    margin-right: auto;
+    margin-left: 122px;
+  }
+
+  .u-section-31 .u-shape-21 {
+    margin-top: -144px;
+    margin-right: 55px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-31 .u-sheet-11 {
+    min-height: 1309px;
+  }
+
+  .u-section-31 .u-text-11 {
+    margin-right: 40px;
+  }
+
+  .u-section-31 .u-text-21 {
+    margin-right: 40px;
+  }
+
+  .u-section-31 .u-text-31 {
+    margin-right: 502px;
+  }
+
+  .u-section-31 .u-image-11 {
+    margin-top: 88px;
+    margin-left: 0;
+  }
+
+  .u-section-31 .u-image-21 {
+    width: 487px;
+    height: 487px;
+    margin-top: -193px;
+    margin-left: 96px;
+  }
+
+  .u-section-31 .u-image-31 {
+    width: 262px;
+    height: 262px;
+    margin-top: -770px;
+    margin-right: 24px;
+  }
+
+  .u-section-31 .u-shape-11 {
+    width: 205px;
+    height: 205px;
+    margin-top: 352px;
+    margin-left: 40px;
+  }
+
+  .u-section-31 .u-shape-21 {
+    width: 121px;
+    height: 121px;
+    margin-top: -81px;
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-31 .u-sheet-11 {
+    min-height: 1465px;
+  }
+
+  .u-section-31 .u-text-11 {
+    margin-right: 0;
+  }
+
+  .u-section-31 .u-text-21 {
+    margin-right: 0;
+  }
+
+  .u-section-31 .u-text-31 {
+    margin-right: 322px;
+  }
+
+  .u-section-31 .u-image-11 {
+    width: 270px;
+    height: 270px;
+    margin-top: 100px;
+  }
+
+  .u-section-31 .u-image-21 {
+    width: 452px;
+    height: 452px;
+    margin-top: -132px;
+    margin-right: 27px;
+    margin-left: auto;
+  }
+
+  .u-section-31 .u-image-31 {
+    width: 211px;
+    height: 211px;
+    margin-top: -680px;
+    margin-right: 17px;
+  }
+
+  .u-section-31 .u-shape-11 {
+    width: 195px;
+    height: 195px;
+    margin-top: 314px;
+    margin-right: 322px;
+    margin-left: auto;
+  }
+
+  .u-section-31 .u-shape-21 {
+    margin-top: -13px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-31 .u-sheet-11 {
+    min-height: 1519px;
+  }
+
+  .u-section-31 .u-text-31 {
+    margin-right: 122px;
+  }
+
+  .u-section-31 .u-image-11 {
+    width: 219px;
+    height: 219px;
+    margin-top: 208px;
+  }
+
+  .u-section-31 .u-image-21 {
+    height: 323px;
+    width: 323px;
+    margin-top: -106px;
+    margin-right: auto;
+    margin-left: 17px;
+  }
+
+  .u-section-31 .u-image-31 {
+    width: 188px;
+    height: 188px;
+    margin-top: -608px;
+    margin-right: 0;
+  }
+
+  .u-section-31 .u-shape-11 {
+    width: 141px;
+    height: 141px;
+    margin-top: 333px;
+    margin-right: auto;
+    margin-left: 17px;
+  }
+
+  .u-section-31 .u-shape-21 {
+    width: 96px;
+    height: 96px;
+    margin-top: -16px;
+    margin-right: 17px;
+  }
+} .u-section-41 {
+  background-image: none;
+}
+
+.u-section-41 .u-sheet-11 {
+  min-height: 457px;
+}
+
+.u-section-41 .u-text-11 {
+  font-size: 3rem;
+  width: 682px;
+  margin: 60px auto 0;
+}
+
+.u-section-41 .u-text-21 {
+  width: 614px;
+  margin: 40px auto 0;
+}
+
+.u-section-41 .u-btn-11 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  align-self: center;
+  background-image: none;
+  margin: 40px auto 60px;
+  padding: 20px 55px 21px 54px;
+}
+
+@media (max-width: 767px) {
+  .u-section-41 .u-text-11 {
+    font-size: 2.2777777777777777rem;
+    width: 540px;
+  }
+
+  .u-section-41 .u-text-21 {
+    width: 540px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-41 .u-text-11 {
+    font-size: 1.875rem;
+    width: 340px;
+  }
+
+  .u-section-41 .u-text-21 {
+    width: 340px;
+  }
+}
+.u-section-51 .u-sheet-11 {
+  min-height: 1023px;
+}
+
+.u-section-51 .u-shape-11 {
+  width: 590px;
+  height: 490px;
+  background-image: none;
+  margin: 93px 0 0 auto;
+}
+
+.u-section-51 .u-shape-21 {
+  width: 566px;
+  height: 350px;
+  margin: -702px 265px 0 auto;
+}
+
+.u-section-51 .u-image-11 {
+  height: 542px;
+  width: 812px;
+  object-position: 0% 50%;
+  margin: -290px auto 0 0;
+}
+
+.u-section-51 .u-group-11 {
+  min-height: 426px;
+  width: 518px;
+  margin: -125px auto -119px 80px;
+}
+
+.u-section-51 .u-container-layout-11 {
+  padding: 20px 40px;
+}
+
+.u-section-51 .u-text-11 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.u-section-51 .u-text-21 {
+  line-height: 32.4px;
+  margin: 20px 0 0;
+}
+
+.u-section-51 .u-text-31 {
+  margin: 20px 0 0;
+}
+
+.u-section-51 .u-btn-11 {
+  border-style: solid;
+  padding: 0;
+}
+
+.u-section-51 .u-btn-21 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  align-self: center;
+  background-image: none;
+  margin: 20px auto 0 0;
+  padding: 20px 55px 21px 54px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-51 .u-sheet-11 {
+    min-height: 1011px;
+  }
+
+  .u-section-51 .u-shape-11 {
+    margin-top: 60px;
+  }
+
+  .u-section-51 .u-shape-21 {
+    width: 711px;
+    margin-right: auto;
+    margin-left: 109px;
+  }
+
+  .u-section-51 .u-image-11 {
+    width: 755px;
+  }
+
+  .u-section-51 .u-group-11 {
+    min-height: 413px;
+    margin-top: -123px;
+    margin-bottom: -152px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-51 .u-sheet-11 {
+    min-height: 998px;
+  }
+
+  .u-section-51 .u-shape-11 {
+    height: 413px;
+    margin-top: 55px;
+  }
+
+  .u-section-51 .u-shape-21 {
+    width: 558px;
+    height: 364px;
+    margin-top: -689px;
+    margin-right: 51px;
+    margin-left: auto;
+  }
+
+  .u-section-51 .u-image-11 {
+    height: 476px;
+    width: 598px;
+  }
+
+  .u-section-51 .u-group-11 {
+    min-height: 428px;
+    width: 464px;
+    margin-top: -98px;
+    margin-bottom: -221px;
+    margin-left: 42px;
+  }
+
+  .u-section-51 .u-container-layout-11 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-51 .u-sheet-11 {
+    min-height: 891px;
+  }
+
+  .u-section-51 .u-shape-11 {
+    width: 447px;
+    height: 398px;
+    margin-top: 58px;
+  }
+
+  .u-section-51 .u-shape-21 {
+    width: 394px;
+    height: 348px;
+    margin-top: -705px;
+    margin-right: auto;
+  }
+
+  .u-section-51 .u-image-11 {
+    height: 382px;
+    width: 410px;
+  }
+
+  .u-section-51 .u-group-11 {
+    min-height: 371px;
+    margin-top: -52px;
+    margin-bottom: -249px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-51 .u-sheet-11 {
+    min-height: 855px;
+  }
+
+  .u-section-51 .u-shape-11 {
+    width: 299px;
+    height: 286px;
+    margin-top: 77px;
+  }
+
+  .u-section-51 .u-shape-21 {
+    height: 221px;
+    width: 275px;
+    margin-top: -487px;
+    margin-left: 24px;
+  }
+
+  .u-section-51 .u-image-11 {
+    height: 227px;
+    width: 261px;
+    margin-top: -182px;
+  }
+
+  .u-section-51 .u-group-11 {
+    min-height: 484px;
+    width: 312px;
+    margin-top: -14px;
+    margin-bottom: -124px;
+    margin-left: 0;
+  }
+
+  .u-section-51 .u-container-layout-11 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-section-51 .u-text-11 {
+    font-size: 1.88889rem;
+  }
+}
+
+.u-section-71 .u-sheet-11 {
+  min-height: 1480px;
+}
+
+.u-section-71 .u-image-11 {
+  width: 628px;
+  height: 628px;
+  background-image: url("../images/beachToursPage/erre-min.jpg");
+  background-position: 50% 50%;
+  margin: 52px 96px 0 auto;
+}
+
+.u-section-71 .u-image-21 {
+  width: 276px;
+  height: 276px;
+  background-image: url("../images/beachToursPage/man-traveling-bicycles-holding-map-hipster-style-outfit-friends-having-fun-together-sightseeing-taking-photo-camera_285396-.jpg");
+  background-position: 50% 50%;
+  margin: -596px auto 0 71px;
+}
+
+.u-section-71 .u-image-31 {
+  width: 389px;
+  height: 389px;
+  background-image: url("../images/beachToursPage/fdf-min.jpg");
+  background-position: 50% 50%;
+  margin: 50px auto 0 156px;
+}
+
+.u-section-71 .u-shape-11 {
+  width: 173px;
+  height: 173px;
+  background-image: none;
+  margin: -855px 14px 0 auto;
+}
+
+.u-section-71 .u-text-11 {
+  font-size: 3.77778rem;
+  font-weight: 700;
+  margin: 696px auto 0 0;
+}
+
+.u-section-71 .u-line-11 {
+  margin-top: 37px;
+  margin-bottom: 0;
+  height: 6px;
+  transform-origin: left center;
+}
+
+.u-section-71 .u-layout-wrap-11 {
+  margin-top: 37px;
+  margin-bottom: -56px;
+}
+
+.u-section-71 .u-layout-cell-11 {
+  min-height: 348px;
+}
+
+.u-section-71 .u-container-layout-11 {
+  padding: 30px 30px 30px 0;
+}
+
+.u-section-71 .u-text-21 {
+  line-height: 1.8;
+  font-weight: 700;
+  margin: 0 auto 0 0;
+}
+
+.u-section-71 .u-text-31 {
+  margin: 25px auto 0 0;
+}
+
+.u-section-71 .u-btn-11 {
+  border-style: solid;
+  padding: 0;
+}
+
+.u-section-71 .u-btn-21 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  align-self: center;
+  background-image: none;
+  margin: 20px auto 0 0;
+  padding: 20px 55px 21px 54px;
+}
+
+.u-section-71 .u-layout-cell-21 {
+  min-height: 295px;
+  background-image: none;
+}
+
+.u-section-71 .u-container-layout-21 {
+  padding: 30px;
+}
+
+.u-section-71 .u-text-41 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-71 .u-sheet-11 {
+    min-height: 1669px;
+  }
+
+  .u-section-71 .u-image-11 {
+    width: 642px;
+    height: 642px;
+    margin-top: 238px;
+    margin-right: 82px;
+  }
+
+  .u-section-71 .u-image-21 {
+    margin-top: -818px;
+    margin-left: 25px;
+  }
+
+  .u-section-71 .u-image-31 {
+    margin-top: 280px;
+    margin-left: 25px;
+  }
+
+  .u-section-71 .u-text-11 {
+    width: auto;
+    margin-top: 793px;
+  }
+
+  .u-section-71 .u-layout-wrap-11 {
+    margin-top: 40px;
+    margin-bottom: -457px;
+  }
+
+  .u-section-71 .u-layout-cell-11 {
+    min-height: 287px;
+  }
+
+  .u-section-71 .u-layout-cell-21 {
+    min-height: 243px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-71 .u-sheet-11 {
+    min-height: 1727px;
+  }
+
+  .u-section-71 .u-image-11 {
+    width: 560px;
+    height: 560px;
+    margin-top: 60px;
+    margin-right: 16px;
+  }
+
+  .u-section-71 .u-image-21 {
+    margin-top: -778px;
+    margin-left: 16px;
+  }
+
+  .u-section-71 .u-image-31 {
+    margin-top: 232px;
+    margin-left: 0;
+  }
+
+  .u-section-71 .u-text-11 {
+    margin-top: 745px;
+  }
+
+  .u-section-71 .u-layout-wrap-11 {
+    margin-bottom: -158px;
+  }
+
+  .u-section-71 .u-layout-cell-11 {
+    min-height: 100px;
+  }
+
+  .u-section-71 .u-layout-cell-21 {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-71 .u-sheet-11 {
+    min-height: 1842px;
+  }
+
+  .u-section-71 .u-image-11 {
+    width: 506px;
+    height: 506px;
+    margin-top: 317px;
+    margin-right: 0;
+  }
+
+  .u-section-71 .u-image-21 {
+    width: 227px;
+    height: 227px;
+    margin-top: -758px;
+    margin-left: 0;
+  }
+
+  .u-section-71 .u-image-31 {
+    width: 337px;
+    height: 337px;
+    margin-top: 367px;
+  }
+
+  .u-section-71 .u-text-11 {
+    margin-top: 719px;
+    margin-left: 20px;
+  }
+
+  .u-section-71 .u-layout-wrap-11 {
+    margin-top: 37px;
+    margin-bottom: -192px;
+  }
+
+  .u-section-71 .u-container-layout-11 {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-section-71 .u-container-layout-21 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-71 .u-sheet-11 {
+    min-height: 1840px;
+  }
+
+  .u-section-71 .u-image-11 {
+    width: 296px;
+    height: 296px;
+    margin-top: 300px;
+    margin-left: 44px;
+  }
+
+  .u-section-71 .u-image-21 {
+    width: 209px;
+    height: 209px;
+    margin-top: -458px;
+    margin-left: 18px;
+  }
+
+  .u-section-71 .u-image-31 {
+    width: 254px;
+    height: 254px;
+    margin-top: 148px;
+  }
+
+  .u-section-71 .u-shape-11 {
+    width: 129px;
+    height: 129px;
+    margin-top: -712px;
+    margin-right: 18px;
+  }
+
+  .u-section-71 .u-text-11 {
+    font-size: 2.2777777777777777rem;
+    margin-top: 591px;
+  }
+
+  .u-section-71 .u-layout-wrap-11 {
+    margin-bottom: -193px;
+  }
+} .u-section-81 {
+  background-image: url("../images/beachToursPage/jhjh.jpg");
+  background-position: 50% 50%;
+}
+
+.u-section-81 .u-sheet-11 {
+  min-height: 810px;
+}
+
+.u-section-81 .u-text-11 {
+  font-size: 3rem;
+  margin: 60px 20px 0;
+}
+
+.u-section-81 .u-text-21 {
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  font-weight: 400;
+  font-family: "PT Sans", sans-serif;
+  margin: 20px 20px 0;
+}
+
+.u-section-81 .u-btn-11 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  align-self: center;
+  background-image: none;
+  margin: 30px auto 60px;
+  padding: 20px 56px 21px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-81 .u-sheet-11 {
+    min-height: 668px;
+  }
+
+  .u-section-81 .u-text-11 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-81 .u-text-21 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-81 .u-btn-11 {
+    border-style: none;
+  }
+}
+
+@media (max-width: 991px) {
+   .u-section-81 {
+    background-position: 37.8% 39.04%;
+  }
+
+  .u-section-81 .u-sheet-11 {
+    min-height: 689px;
+  }
+}
+
+@media (max-width: 767px) {
+   .u-section-81 {
+    background-position: 64.65% 41.08%;
+    background-size: auto 115%;
+  }
+
+  .u-section-81 .u-sheet-11 {
+    min-height: 655px;
+  }
+
+  .u-section-81 .u-text-11 {
+    font-size: 2.2777777777777777rem;
+  }
+
+  .u-section-81 .u-text-21 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-81 {
+    background-position: 24.6% 0%;
+    background-size: auto 120%;
+  }
+
+  .u-section-81 .u-sheet-11 {
+    min-height: 654px;
+  }
+
+  .u-section-81 .u-text-11 {
+    width: auto;
+    font-size: 1.875rem;
+  }
+
+  .u-section-81 .u-text-21 {
+    margin-top: 10px;
+  }
+} .u-section-91 {
+  background-image: none;
+}
+
+.u-section-91 .u-sheet-11 {
+  min-height: 560px;
+}
+
+.u-section-91 .u-layout-wrap-11 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.u-section-91 .u-layout-cell-11 {
+  min-height: 200px;
+}
+
+.u-section-91 .u-container-layout-11 {
+  padding: 30px;
+}
+
+.u-section-91 .u-text-11 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 auto 0 0;
+}
+
+.u-section-91 .u-text-21 {
+  margin: 20px auto 0 0;
+}
+
+.u-section-91 .u-layout-cell-21 {
+  min-height: 200px;
+}
+
+.u-section-91 .u-container-layout-21 {
+  padding: 30px;
+}
+
+.u-section-91 .u-text-31 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 auto 0 0;
+}
+
+.u-section-91 .u-text-41 {
+  margin: 20px auto 0 0;
+}
+
+.u-section-91 .u-layout-cell-31 {
+  min-height: 400px;
+}
+
+.u-section-91 .u-container-layout-31 {
+  padding: 30px;
+}
+
+.u-section-91 .u-text-51 {
+  text-transform: none;
+  margin: 0 auto 0 0;
+}
+
+.u-section-91 .u-text-61 {
+  margin: 20px auto 0 0;
+}
+
+.u-section-91 .u-text-71 {
+  text-align: left;
+  margin: 35px auto 0 0;
+}
+
+.u-section-91 .u-btn-11 {
+  border-style: solid;
+  padding: 0;
+}
+
+.u-section-91 .u-btn-21 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  align-self: center;
+  background-image: none;
+  text-align: left;
+  margin: 20px auto 0 0;
+  padding: 20px 55px 21px 54px;
+}
+
+.u-section-91 .u-image-11 {
+  min-height: 400px;
+  background-image: url("../images/beachToursPage/vertical-shot-blue-sea-palm-trees-beach-cloudy-day_181624-52390.jpg");
+  background-position: 50% 50%;
+}
+
+.u-section-91 .u-container-layout-41 {
+  padding: 30px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-91 .u-sheet-11 {
+    min-height: 490px;
+  }
+
+  .u-section-91 .u-layout-wrap-11 {
+    position: relative;
+  }
+
+  .u-section-91 .u-layout-cell-11 {
+    min-height: 165px;
+  }
+
+  .u-section-91 .u-layout-cell-21 {
+    min-height: 165px;
+  }
+
+  .u-section-91 .u-layout-cell-31 {
+    min-height: 330px;
+  }
+
+  .u-section-91 .u-image-11 {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-91 .u-sheet-11 {
+    min-height: 866px;
+  }
+
+  .u-section-91 .u-layout-cell-11 {
+    min-height: 100px;
+  }
+
+  .u-section-91 .u-layout-cell-21 {
+    min-height: 100px;
+  }
+
+  .u-section-91 .u-layout-cell-31 {
+    min-height: 100px;
+  }
+
+  .u-section-91 .u-image-11 {
+    min-height: 506px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-91 .u-sheet-11 {
+    min-height: 1119px;
+  }
+
+  .u-section-91 .u-container-layout-11 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-91 .u-container-layout-21 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-91 .u-container-layout-31 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-91 .u-image-11 {
+    min-height: 759px;
+  }
+
+  .u-section-91 .u-container-layout-41 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-91 .u-sheet-11 {
+    min-height: 838px;
+  }
+
+  .u-section-91 .u-image-11 {
+    min-height: 478px;
+  }
+}
