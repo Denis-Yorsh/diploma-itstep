@@ -1,4 +1,4 @@
-package org.itstep.diploma.controllers;
+package org.itstep.diploma.controllers.home.controllers;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
