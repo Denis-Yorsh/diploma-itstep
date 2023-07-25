@@ -1,0 +1,254 @@
+header nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: rgba(170, 246, 227, 0.3);
+}
+
+header nav a {
+  font-size: 2vw;
+}
+
+.cont {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.position-cont {
+  position: fixed;
+  top: 20vh;
+  left: 30vh;
+}
+
+.flex-cont {
+display: flex;
+flex-direction: column;
+}
+
+form input {
+  font-size: 2vw;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+input::placeholder {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+form button {
+  font-size: 2vw;
+  border-radius: 25px;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 799px;
+}
+
+.u-section-1 .u-text-1 {
+  font-family: "Meera Inimai";
+  margin: 60px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+  width: 680px;
+  margin: 24px auto 0;
+}
+
+.u-section-1 .u-image-1 {
+  width: 456px;
+  height: 301px;
+  margin: 41px auto 0;
+}
+
+.u-section-1 .u-image-2 {
+  width: 433px;
+  height: 300px;
+  object-position: 50% 0%;
+  margin: -211px auto 0 0;
+}
+
+.u-section-1 .u-image-3 {
+  width: 449px;
+  height: 300px;
+  object-position: 50% 0%;
+  margin: -300px auto 0 691px;
+}
+
+.u-section-1 .u-btn-1 {
+  text-transform: uppercase;
+  background-image: none;
+  border-style: none;
+  letter-spacing: 2px;
+  align-self: center;
+  margin: 30px auto 0;
+}
+
+.u-section-1 .u-text-3 {
+  font-style: normal;
+  font-size: 1rem;
+  margin: 60px auto;
+}
+
+.u-section-1 .u-btn-2 {
+  border-style: solid;
+  font-style: normal;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-text-1 {
+    font-size: 2.25rem;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 462px;
+    margin-left: 239px;
+  }
+
+  .u-section-1 .u-image-2 {
+    width: 334px;
+    height: 254px;
+    margin-top: -165px;
+  }
+
+  .u-section-1 .u-image-3 {
+    width: 390px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1009px;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-top: 50px;
+  }
+
+  .u-section-1 .u-text-2 {
+    width: auto;
+    margin-top: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 394px;
+    height: 293px;
+    margin-top: 148px;
+    margin-right: 20px;
+    margin-left: auto;
+  }
+
+  .u-section-1 .u-image-2 {
+    margin-top: -405px;
+  }
+
+  .u-section-1 .u-image-3 {
+    width: 393px;
+    height: 317px;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: 60px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 36px;
+  }
+
+  .u-section-1 .u-text-3 {
+    width: auto;
+    margin-top: 36px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1208px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-image-1 {
+    margin-top: 273px;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-image-2 {
+    margin-top: -530px;
+    margin-left: -1px;
+  }
+
+  .u-section-1 .u-image-3 {
+    margin-top: 248px;
+    margin-right: 147px;
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-right: 179px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-right: 196px;
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1044px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: 1.875rem;
+    margin-top: 46px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: 31px;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: 316px;
+    height: 234px;
+    margin-top: 255px;
+  }
+
+  .u-section-1 .u-image-2 {
+    height: 246px;
+    width: 301px;
+    margin-top: -458px;
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-image-3 {
+    height: 243px;
+    width: 301px;
+    margin-top: 179px;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 31px;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-top: 39px;
+    margin-right: auto;
+    margin-bottom: 46px;
+  }
+}

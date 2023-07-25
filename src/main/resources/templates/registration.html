@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Self-Drive Car Tours">
+    <meta name="description" content="">
+    <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{../css/registration.css}" media="screen">
+    <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
+    <script th:src="@{../js/showPage.js}"></script>
+    <title>Registration</title>
+
 </head>
-<body>
-<h1>Registration</h1>
+<body class="u-body u-xl-mode" data-lang="ru" style="display: none">
+<!-- Header for nav -->
+<header>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/info/contacts}">Contacts</a>
+        <a th:href="@{/info/aboutus}">About us</a>
+    </nav>
+</header>
+
+<section class="u-align-center u-clearfix u-section-1 cont" id="carousel_ac04">
+    <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+        <img class="u-align-left u-image u-image-1" data-image-width="626" data-image-height="417"
+             th:src="@{images/registration/man-traveling.jpg}">
+        <img class="u-align-left u-image u-image-2" data-image-width="700" data-image-height="683"
+             th:src="@{images/registration/erre-min.jpg}">
+        <img class="u-align-left u-image u-image-3" data-image-width="1038" data-image-height="1080"
+             th:src="@{images/registration/22.jpg}">
+    </div>
+</section>
+
+<section class="position-cont">
+    <form class="flex-cont" method="post">
+        <input type="txt" placeholder="First Name" name="firstName" required>
+        <input type="txt" placeholder="Last Name" name="lastName" required>
+        <input onfocus="(this.type='date')" placeholder="Day of Birthday" name="dayBirthday" required>
+        <input type="text" placeholder="User Name" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <input type="password" placeholder="Repeat password" name="repeatPassword" required>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <button type="submit">Send</button>
+    </form>
+</section>
 </body>
 </html>
