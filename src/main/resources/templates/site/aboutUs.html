@@ -16,11 +16,11 @@
         <a th:href="@{/}">Home</a>
         <a th:href="@{/blog/homePage}">Blog</a>
         <a th:href="@{/info/contacts}">Contacts</a>
-        <th:block th:if="${authenticationIsNull}">
+        <th:block th:if="${#authorization.expression('hasRole(''ROLE_ANONYMOUS'')')}">
             <a th:href="@{/login}">LogIn</a>
             <a th:href="@{/registration}">Welcome guest</a>
         </th:block>
-        <th:block th:if="${!authenticationIsNull}">
+        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ANONYMOUS'')')}">
             <a th:href="@{/logout}">LogOut</a>
             <a th:href="@{/logout}"><th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block></a>
         </th:block>
