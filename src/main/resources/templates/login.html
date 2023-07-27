@@ -55,13 +55,11 @@
     </section>
 
     <section class="position-cont">
-        <form method="post" th:action="@{/login}">
-            <div class="flex-cont">
+        <form class="flex-cont" method="post" th:action="@{/login}">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
                 <button type="submit">Sign in</button>
-            </div>
         </form>
     </section>
 </main>
