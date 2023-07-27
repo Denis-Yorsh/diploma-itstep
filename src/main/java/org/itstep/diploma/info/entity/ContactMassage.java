@@ -6,7 +6,7 @@ import lombok.Data;
 @Entity
 @Table(name = "contact_massage_table")
 @Data
-public class ContactMassage {
+public final class ContactMassage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
