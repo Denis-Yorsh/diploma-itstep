@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
     <link rel="stylesheet" th:href="@{../css/contacts.css}" media="screen"/>
     <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
-    <script th:src="@{../js/showPage.js}"></script>
+    <script th:src="@{../js/contacts.js}"></script>
     <title>Contacts</title>
 </head>
 <body class="u-body u-xl-mode" data-lang="ru" style="display: none">
@@ -21,7 +21,9 @@
         </th:block>
         <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ANONYMOUS'')')}">
             <a th:href="@{/logout}">LogOut</a>
-            <a th:href="@{/logout}"><th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block></a>
+            <a th:href="@{/logout}">
+                <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+            </a>
         </th:block>
     </nav>
 </header>
@@ -153,34 +155,32 @@
                                         <p class="u-text u-text-default u-text-6">Sample text. Click to select the text
                                             box. Click again or double click to start editing the text.</p>
                                         <div class="u-form u-form-1">
-                                            <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
-                                                  style="padding: 0;">
+                                            <form method="post" action="#" class="u-clearfix
+                                            u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0;">
                                                 <div class="u-form-group u-form-name">
-                                                    <label for="name-eef9"
-                                                           class="u-form-control-hidden u-label">Name</label>
                                                     <input type="text" placeholder="Enter your Name" id="name-eef9"
-                                                           name="name" class="u-input u-input-rectangle" required="">
+                                                           class="name u-input"
+                                                           required>
                                                 </div>
                                                 <div class="u-form-email u-form-group">
-                                                    <label for="email-eef9"
-                                                           class="u-form-control-hidden u-label">Email</label>
                                                     <input type="email" placeholder="Enter a valid email address"
-                                                           id="email-eef9" name="email"
-                                                           class="u-input u-input-rectangle" required="">
+                                                           id="email-eef9"
+                                                           class="email u-input" required>
                                                 </div>
                                                 <div class="u-form-group u-form-message">
-                                                    <label for="message-eef9" class="u-form-control-hidden u-label">Message</label>
                                                     <textarea placeholder="Enter your message" rows="4" cols="50"
-                                                              id="message-eef9" name="message"
-                                                              class="u-input u-input-rectangle" required=""></textarea>
+                                                              id="message-eef9"
+                                                              class="message u-input"
+                                                              required></textarea>
                                                 </div>
                                                 <div class="u-align-left u-form-group u-form-submit">
-                                                    <a th:href="@{/info/massage}" class="u-border-2 u-border-grey-75 u-border-radius-30
-                                                    u-btn u-btn-round u-btn-submit u-button-style
+                                                    <a th:href="@{/info/massage/default/default/default}"
+                                                       class="send-massage u-border-2 u-border-grey-75
+                                                       u-border-radius-30 u-btn u-btn-round u-btn-submit u-button-style
                                                     u-none u-btn-1">Submit</a>
                                                     <input type="submit" value="submit" class="u-form-control-hidden">
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
