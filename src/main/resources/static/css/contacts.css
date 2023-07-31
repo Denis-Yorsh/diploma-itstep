@@ -12,6 +12,10 @@ header nav a {
   font-size: 2vw;
 }
 
+.massage {
+  color: red;
+}
+
 .cont {
   display: flex;
   align-items: center;
