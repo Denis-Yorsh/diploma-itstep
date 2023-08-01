@@ -19,13 +19,7 @@ public class RegistrationController {
 
 	@PostMapping("/registration")
 	public String registrationPost(UsersRegistrationDto usersRegistrationDto) {
-//		usersRegistrationService.createUser(usersRegistrationDto);
-		System.err.println("\n\n\n-------------------------------------------------------------------------test\n\n\n");
-		System.err.println("\n\n\n-------------------------------------------------------------------------test\n\n\n");
-		System.out.println(usersRegistrationDto);
-		System.err.println("\n\n\n-------------------------------------------------------------------------test\n\n\n");
-		System.err.println("\n\n\n-------------------------------------------------------------------------test\n\n\n");
-		System.err.println("\n\n\n-------------------------------------------------------------------------test\n\n\n");
-		return "registration";
+		usersRegistrationService.createUser(usersRegistrationDto); // test
+		return "redirect:login";
 	}
 }

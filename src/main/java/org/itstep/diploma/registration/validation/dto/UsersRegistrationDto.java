@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Past;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 public final class UsersRegistrationDto {
@@ -18,7 +18,7 @@ public final class UsersRegistrationDto {
 	private String lastName;
 	@NotBlank
 	@Past
-	private Date dayBirthday;
+	private LocalDate dayBirthday;
 	@NotBlank
 	@Email
 	private String email;
