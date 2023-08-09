@@ -7,7 +7,7 @@
  - Spring Security
  - Spring Data JPA
  - H2 Database
- - MySQL Driver
+ - MySQL Database
  - Validation
  - Lombok
  - Thymeleaf
