@@ -18,4 +18,6 @@
 ###
 ![registration.jpeg](images%2Fregistration.jpeg)
 ![registration_validation.jpeg](images%2Fregistration_validation.jpeg)
-![er_diagramma.jpeg](images%2Fer_diagramma.jpeg)
+![contact_message_page.jpeg](images%2Fcontact_message_page.jpeg)
+## ER Diagram
+![er_diagramma.jpeg](images%2Fer_diagram.jpeg)
