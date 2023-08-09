@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users_registration_table")
@@ -24,9 +25,10 @@ public final class UsersRegistration {
 	private String lastName;
 	@Column(name = "day_birthday")
 	private LocalDate dayBirthday;
+	@Column(unique = true)
 	private String email;
 	@Column(name = "day_registration")
-	private LocalDate dayRegistration;
+	private LocalDateTime dayRegistration;
 	@OneToOne
 	@JoinColumn(name = "fk_user_id", nullable = false)
 	private Users user;

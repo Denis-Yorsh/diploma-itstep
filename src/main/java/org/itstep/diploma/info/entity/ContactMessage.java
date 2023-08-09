@@ -1,7 +1,6 @@
 package org.itstep.diploma.info.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -13,8 +12,10 @@ public final class ContactMessage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(length = 50 ,nullable = false)
 	private String name;
-//	@Email
+	@Column(nullable = false)
 	private String email;
+	@Column(length = 1000 ,nullable = false)
 	private String massage;
 }

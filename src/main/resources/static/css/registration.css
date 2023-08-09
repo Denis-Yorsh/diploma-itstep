@@ -20,7 +20,7 @@ header nav a {
 
 .position-cont {
   position: fixed;
-  top: 20vh;
+  top: 10vh;
   left: 30vh;
 }
 
@@ -32,7 +32,7 @@ flex-direction: column;
 form input {
   font-size: 2vw;
   border-radius: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 input::placeholder {
@@ -43,6 +43,11 @@ input::placeholder {
 form button {
   font-size: 2vw;
   border-radius: 25px;
+}
+
+form div {
+  font-weight: bold;
+  color: red;
 }
 
 .u-section-1 .u-sheet-1 {

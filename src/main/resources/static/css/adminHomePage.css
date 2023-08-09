@@ -1,0 +1,42 @@
+header nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: rgba(170, 246, 227, 0.3);
+}
+
+header nav a {
+    font-size: 2vw;
+}
+
+main {
+    margin: 0 10vw;
+}
+
+main nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10vh;
+    margin-bottom: 1vh;
+    background-color: rgba(170, 246, 227, 0.3);
+}
+
+main nav a {
+    font-size: 2vw;
+    color: black;
+}
+
+table {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+td {
+    max-width: 15vw;
+    overflow-wrap: break-word;
+    text-align: center;
+}

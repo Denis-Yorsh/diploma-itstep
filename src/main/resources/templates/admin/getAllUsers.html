@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<<!--------------------------------------------------->
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>user name</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>birthday</th>
+        <th>day registration</th>
+        <th>email</th>
+        <th>rol</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="user : ${allUsers}">
+        <tr>
+            <td th:text="*{user.getId()}"></td>
+            <td th:text="*{user.getUsername()}"></td>
+            <td th:text="*{user.getUsersRegistration().getFirstName()}"></td>
+            <td th:text="*{user.getUsersRegistration().getLastName()}"></td>
+            <td th:text="*{user.getUsersRegistration().getDayBirthday()}"></td>
+            <td th:text="*{user.getUsersRegistration().getDayRegistration()}"></td>
+            <td th:text="*{user.getUsersRegistration().getEmail()}"></td>
+            <td>
+                <th:block th:each="role : *{user.getAuthorities()}">
+                    <th:block th:text="*{role.getAuthority()}"></th:block>
+                    <br>
+                </th:block>
+            </td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+<!--------------------------------------------------->
+</body>
+</html>

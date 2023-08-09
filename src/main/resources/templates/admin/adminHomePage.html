@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{../css/adminHomePage.css}" media="screen">
+    <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
+    <script class="script" th:src="@{../js/adminHomePage.js}"></script>
+    <title>Admin page</title>
+
+</head>
+<body class="u-body u-xl-mode" data-lang="ru" style="display: none">
+<header>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/blog/homePage}">Blog</a>
+        <a th:href="@{/info/contacts}">Contacts</a>
+        <a th:href="@{/info/aboutus}">About us</a>
+        <a th:href="@{/logout}">LogOut</a>
+        <a th:href="@{/adminHome}">
+            <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+        </a>
+    </nav>
+</header>
+
+<main>
+    <nav>
+        <a class="contact-messages" th:href="@{/getAllContactMessages}">Contacts Messages</a>
+        <a class="users" th:href="@{/getAllUsers}">All users</a>
+    </nav>
+    <div class="data"></div>
+</main>
+
+<input class="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
+</body>
+</html>

@@ -5,17 +5,22 @@ import org.itstep.diploma.configs.security.entity.Roles;
 import org.itstep.diploma.configs.security.entity.Users;
 import org.itstep.diploma.configs.security.repository.UserRepository;
 import org.itstep.diploma.registration.entity.UsersRegistration;
-import org.itstep.diploma.registration.validation.dto.UsersRegistrationDto;
+import org.itstep.diploma.registration.dto.UsersRegistrationDto;
+import org.itstep.diploma.registration.repository.UsersRegistrationRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UsersRegistrationServiceImp implements UsersRegistrationService{
+public class UsersRegistrationServiceImp implements UsersRegistrationService {
 	private final UserRepository userRepository;
+	private final UsersRegistrationRepository usersRegistrationRepository;
 	private final Users users;
 	private final Roles roles;
 	private final UsersRegistration usersRegistration;
@@ -23,7 +28,7 @@ public class UsersRegistrationServiceImp implements UsersRegistrationService{
 
 	@Transactional
 	@Override
-	public Users createUser(UsersRegistrationDto usersRegistrationDto) {
+	public void createUser(UsersRegistrationDto usersRegistrationDto) {
 		users.setUsername(usersRegistrationDto.getUsername());
 		users.setPassword(passwordEncoder.encode(usersRegistrationDto.getPassword()));
 		roles.setAuthority("ROLE_USER");
@@ -31,11 +36,27 @@ public class UsersRegistrationServiceImp implements UsersRegistrationService{
 		usersRegistration.setLastName(usersRegistrationDto.getLastName());
 		usersRegistration.setDayBirthday(usersRegistrationDto.getDayBirthday());
 		usersRegistration.setEmail(usersRegistrationDto.getEmail());
-		usersRegistration.setDayRegistration(LocalDate.now());
+		usersRegistration.setDayRegistration(LocalDateTime.now());
 
 		userRepository.save(users);
 		users.addRole(roles);
 		users.addUsersRegistration(usersRegistration);
-		return users;
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public Map<String, Boolean> checkUserNameAndEmail(String username, String email) {
+		Map<String, Boolean> checked = new HashMap<>();
+		checked.put("username", false);
+		checked.put("email", false);
+		Optional<Users> byUsername = userRepository.findByUsername(username);
+		Optional<UsersRegistration> byEmail = usersRegistrationRepository.findByEmail(email);
+		if (byUsername.isPresent()) {
+			checked.put("username", true);
+		}
+		if (byEmail.isPresent()) {
+			checked.put("email", true);
+		}
+		return checked;
 	}
 }

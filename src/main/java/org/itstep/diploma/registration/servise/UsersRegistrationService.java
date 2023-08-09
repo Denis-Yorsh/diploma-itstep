@@ -1,8 +1,10 @@
 package org.itstep.diploma.registration.servise;
 
-import org.itstep.diploma.configs.security.entity.Users;
-import org.itstep.diploma.registration.validation.dto.UsersRegistrationDto;
+import org.itstep.diploma.registration.dto.UsersRegistrationDto;
+
+import java.util.Map;
 
 public interface UsersRegistrationService {
-	Users createUser(UsersRegistrationDto usersRegistrationDto);
+	void createUser(UsersRegistrationDto usersRegistrationDto);
+	Map<String, Boolean> checkUserNameAndEmail(String username, String email);
 }

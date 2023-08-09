@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
-    <link rel="stylesheet" th:href="@{../css/aboutUs.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{../css/aboutUsPage.css}" media="screen"/>
     <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
     <script th:src="@{../js/showPage.js}"></script>
     <title>About us</title>
@@ -20,9 +20,17 @@
             <a th:href="@{/login}">LogIn</a>
             <a th:href="@{/registration}">Welcome guest</a>
         </th:block>
-        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ANONYMOUS'')')}">
+        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
             <a th:href="@{/logout}">LogOut</a>
-            <a th:href="@{/logout}"><th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block></a>
+            <a th:href="@{/logout}">
+                <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+            </a>
+        </th:block>
+        <th:block th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+            <a th:href="@{/logout}">LogOut</a>
+            <a th:href="@{/adminHome}">
+                <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+            </a>
         </th:block>
     </nav>
 </header>
@@ -79,7 +87,7 @@
                             <div class="u-align-center-xl u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-4">
                                 <div class="u-container-layout u-valign-bottom u-container-layout-4">
                                     <img class="u-expand-resize u-expanded-width u-image u-image-1"
-                                         th:src="@{../images/aboutUs/min.png}">
+                                         th:src="@{../images/aboutUsPage/min.png}">
                                 </div>
                             </div>
                         </div>

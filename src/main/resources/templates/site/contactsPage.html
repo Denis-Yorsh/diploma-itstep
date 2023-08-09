@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
-    <link rel="stylesheet" th:href="@{../css/contacts.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{../css/contactsPage.css}" media="screen"/>
     <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
-    <script th:src="@{../js/contacts.js}"></script>
+    <script th:src="@{../js/contactsPage.js}"></script>
     <title>Contacts</title>
 </head>
 <body class="u-body u-xl-mode" data-lang="ru" style="display: none">
@@ -19,9 +19,15 @@
             <a th:href="@{/login}">LogIn</a>
             <a th:href="@{/registration}">Welcome guest</a>
         </th:block>
-        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ANONYMOUS'')')}">
+        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
             <a th:href="@{/logout}">LogOut</a>
             <a th:href="@{/logout}">
+                <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+            </a>
+        </th:block>
+        <th:block th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+            <a th:href="@{/logout}">LogOut</a>
+            <a th:href="@{/adminHome}">
                 <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
             </a>
         </th:block>
