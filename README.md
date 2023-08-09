@@ -1,6 +1,7 @@
 # Website for a travel company
 ![home_page.jpeg](images%2Fhome_page.jpeg)
 ## Technologies used:
+### BackEnd:
  - Spring Boot
  - Spring Boot DevTools
  - Spring Web
@@ -11,6 +12,7 @@
  - Validation
  - Lombok
  - Thymeleaf
+### FrontEnd:
  - HTML 5
  - CSS 3
  - JavaScript
