@@ -1,13 +1,18 @@
 package org.itstep.diploma.registration.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.registration.servise.UsersRegistrationService;
+import org.itstep.diploma.configs.security.entity.Roles;
+import org.itstep.diploma.configs.security.entity.Users;
 import org.itstep.diploma.registration.dto.UsersRegistrationDto;
+import org.itstep.diploma.registration.entity.UsersRegistration;
+import org.itstep.diploma.registration.servise.UsersRegistrationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Map;
 
@@ -24,7 +29,8 @@ public class RegistrationController {
 	@PostMapping("/registration")
 	public String registrationPost(@ModelAttribute("usersRegistration")
 								   @Validated UsersRegistrationDto usersRegistrationDto,
-								   BindingResult bindingResult, Model model) {
+								   BindingResult bindingResult,
+								   Model model) {
 		if (bindingResult.hasErrors()) {
 			checkUserNameAndEmail(usersRegistrationDto, model);
 			checkPasswords(usersRegistrationDto, model);
@@ -37,7 +43,7 @@ public class RegistrationController {
 		if (checkPasswords(usersRegistrationDto, model)) {
 			return "registration";
 		}
-		usersRegistrationService.createUser(usersRegistrationDto);
+		usersRegistrationService.createUser(new Users(), new Roles(), new UsersRegistration(), usersRegistrationDto);
 		return "redirect:login";
 	}
 
