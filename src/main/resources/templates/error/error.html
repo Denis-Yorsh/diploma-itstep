@@ -5,14 +5,50 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
-    <link rel="stylesheet" th:href="@{../css/errorPage.css}" media="screen">
-    <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
-    <script th:src="@{../js/showPage.js}"></script>
     <title>ERROR</title>
+    <style>
+        body {
+            margin: 0;
+        }
 
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100vw;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            background-color: rgba(170, 246, 227, 0.3);
+        }
+
+        header nav a {
+            font-size: 2vw;
+            text-decoration: none;
+            color: #478ac9;
+        }
+
+        .error {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-size: 15vh;
+        }
+
+        .dk-end {
+            text-align: end;
+        }
+
+        .u-body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+    </style>
 </head>
-<body class="u-body u-xl-mode" data-lang="ru" style="display: none">
+
+<body class="u-body">
 <header>
     <nav>
         <a th:href="@{/}">Home</a>
