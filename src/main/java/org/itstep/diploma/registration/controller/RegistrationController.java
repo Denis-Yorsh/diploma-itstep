@@ -1,10 +1,7 @@
 package org.itstep.diploma.registration.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.configs.security.entity.Roles;
-import org.itstep.diploma.configs.security.entity.Users;
 import org.itstep.diploma.registration.dto.UsersRegistrationDto;
-import org.itstep.diploma.registration.entity.UsersRegistration;
 import org.itstep.diploma.registration.servise.UsersRegistrationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,7 +40,7 @@ public class RegistrationController {
 		if (checkPasswords(usersRegistrationDto, model)) {
 			return "registration";
 		}
-		usersRegistrationService.createUser(new Users(), new Roles(), new UsersRegistration(), usersRegistrationDto);
+		usersRegistrationService.createUser(usersRegistrationDto);
 		return "redirect:login";
 	}
 

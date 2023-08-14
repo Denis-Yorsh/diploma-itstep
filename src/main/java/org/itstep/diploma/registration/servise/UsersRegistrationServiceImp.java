@@ -7,6 +7,8 @@ import org.itstep.diploma.configs.security.repository.UserRepository;
 import org.itstep.diploma.registration.dto.UsersRegistrationDto;
 import org.itstep.diploma.registration.entity.UsersRegistration;
 import org.itstep.diploma.registration.repository.UsersRegistrationRepository;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,18 +19,19 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
+@Scope(scopeName = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @RequiredArgsConstructor
 public class UsersRegistrationServiceImp implements UsersRegistrationService {
 	private final UserRepository userRepository;
 	private final UsersRegistrationRepository usersRegistrationRepository;
+	private final Users users;
+	private final Roles roles;
+	private final UsersRegistration usersRegistration;
 	private final PasswordEncoder passwordEncoder;
 
 	@Transactional
 	@Override
-	public void createUser(Users users,
-						   Roles roles,
-						   UsersRegistration usersRegistration,
-						   UsersRegistrationDto usersRegistrationDto) {
+	public void createUser(UsersRegistrationDto usersRegistrationDto) {
 		users.setUsername(usersRegistrationDto.getUsername());
 		users.setPassword(passwordEncoder.encode(usersRegistrationDto.getPassword()));
 		roles.setAuthority("ROLE_USER");
