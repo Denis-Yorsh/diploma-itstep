@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST POST IMAGES</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data" th:action="@{/image/save}">
+    <input type="file" accept="image/*" name="imageFile">
+    <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden">
+    <button type="submit">send</button>
+</form>
+</body>
+</html>
