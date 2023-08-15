@@ -38,6 +38,7 @@ public class SecurityConfiguration {
 										"/info/**",
 										"/message/**",
 										"/registration/**",
+										"/image/**",
 										"/error/**"
 								).permitAll()
 								.requestMatchers("/blog/**").hasAuthority("ROLE_USER")
