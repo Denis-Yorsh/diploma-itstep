@@ -10,28 +10,8 @@ $(() => {
             dataType: "text",
             success: function (response) {
                 let data = response.split("<!--------------------------------------------------->")
-                $(".script").remove();
-                $("head").append(data[1]);
-                $(".data").html(data[3]);
-            },
-        })
-    })
-
-    $(".delete").on("click", function (event) {
-        event.preventDefault();
-        $.ajax({
-            type: "DELETE",
-            url: "/delete",
-            data: {
-                id: `${$(this).attr("href")}`,
-                _csrf: $(".csrf").val()
-            },
-            dataType: "text",
-            success: function (response) {
-                let data = response.split("<!--------------------------------------------------->")
-                $(".script").remove();
-                $("head").append(data[1]);
-                $(".data").html(data[3]);
+                $(".data").html(data[1]);
+                listenerDeleteContactMessage()
             },
         })
     })
@@ -49,4 +29,77 @@ $(() => {
             },
         })
     })
+
+    $(".home-role").on("click", function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: `${$(this).attr("href")}`,
+            data: {_csrf: $(".csrf").val()},
+            dataType: "text",
+            success: function (response) {
+                let data = response.split("<!--------------------------------------------------->")
+                $(".data").html(data[1]);
+                listenerAddDeleteRole()
+            },
+        })
+    })
+
+    const listenerAddDeleteRole = () => {
+        $(".addRole, .deleteRole").on("click", function (event) {
+            event.preventDefault();
+            const witchRoleArray = $(this).attr("href").split("/")
+            let witchUsername;
+            let witchRole;
+            let httpMethod;
+            if (witchRoleArray[2] === "addRole") {
+                witchUsername = $(".addRole-input").val()
+                witchRole = $(".addRoleSelect").val()
+                httpMethod = "POST"
+            } else {
+                witchUsername = $(".deleteRole-input").val()
+                witchRole = $(".deleteRoleSelect").val()
+                httpMethod = "DELETE"
+            }
+            $.ajax({
+                type: httpMethod,
+                url: `${$(this).attr("href")}`,
+                data: {
+                    username: witchUsername,
+                    role: witchRole,
+                    _csrf: $(".csrf").val()
+                },
+                dataType: "text",
+                success: function (response) {
+                    let respArray = response.split("---")
+                    $(".dk-response-add, .dk-response-delete").text("")
+                    if (respArray[0] === "add") {
+                        $(".dk-response-add").text(respArray[1])
+                    } else if (respArray[0] === "delete") {
+                        $(".dk-response-delete").text(respArray[1])
+                    }
+                },
+            })
+        })
+    }
+
+    const listenerDeleteContactMessage = () => {
+        $(".delete").on("click", function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: "DELETE",
+                url: "/delete",
+                data: {
+                    id: `${$(this).attr("href")}`,
+                    _csrf: $(".csrf").val()
+                },
+                dataType: "text",
+                success: function (response) {
+                    let data = response.split("<!--------------------------------------------------->")
+                    $(".data").html(data[1]);
+                    listenerDeleteContactMessage()
+                },
+            })
+        })
+    }
 });

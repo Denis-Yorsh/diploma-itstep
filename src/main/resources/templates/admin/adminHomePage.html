@@ -27,10 +27,13 @@
 </header>
 
 <main>
-    <nav>
+    <nav class="dk-mt-10">
         <a class="contact-messages" th:href="@{/getAllContactMessages}">Contacts Messages</a>
         <a class="users" th:href="@{/getAllUsers}">All users</a>
+    </nav>
+    <nav>
         <a class="home-role" th:href="@{/homeRole/}">Add or delete User's ROLE</a>
+        <a class="add-post" th:href="@{/post/addPost}">POST</a>
     </nav>
     <div class="data"></div>
 </main>

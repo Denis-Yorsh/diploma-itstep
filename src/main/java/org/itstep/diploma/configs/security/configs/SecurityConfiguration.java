@@ -38,14 +38,16 @@ public class SecurityConfiguration {
 										"/info/**",
 										"/message/**",
 										"/registration/**",
-										"/image/**",
+										"/image/**", // test
 										"/error/**"
 								).permitAll()
 								.requestMatchers("/blog/**").hasAuthority("ROLE_USER")
 								.requestMatchers(
 										"/admin/**",
-										"/delete/**"
+										"/delete/**",
+										"/homeRole/**"
 								).hasAuthority("ROLE_ADMIN")
+								.requestMatchers("/post/**").hasAuthority("ROLE_WRITER")
 								.requestMatchers(
 										"/css/**",
 										"/images/**",
