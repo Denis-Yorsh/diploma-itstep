@@ -12,10 +12,10 @@ public final class ContactMessage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(length = 50 ,nullable = false)
+	@Column(length = 50, nullable = false)
 	private String name;
 	@Column(nullable = false)
 	private String email;
-	@Column(length = 1000 ,nullable = false)
+	@Column(length = 1000, nullable = false)
 	private String massage;
 }

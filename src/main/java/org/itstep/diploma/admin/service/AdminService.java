@@ -8,5 +8,6 @@ import java.util.Optional;
 
 public interface AdminService {
 	Optional<List<ContactMessage>> getAll();
+
 	Optional<List<Users>> getAllUsers();
 }

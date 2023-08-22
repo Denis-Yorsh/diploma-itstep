@@ -45,6 +45,39 @@ $(() => {
         })
     })
 
+    $(".add-post").on("click", function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: `${$(this).attr("href")}`,
+            data: {_csrf: $(".csrf").val()},
+            dataType: "text",
+            success: function (response) {
+                let data = response.split("<!--------------------------------------------------->")
+                $(".data").html(data[1]);
+                listenerAddPost()
+            },
+        })
+    })
+
+    const listenerAddPost = () => {
+        $("#dk-my-form").on("submit", function (event) {
+            event.preventDefault();
+            let thatForm = $(this)
+            let formData = new FormData(thatForm.get(0));
+            $.ajax({
+                type: "POST",
+                url: `${$(this).attr("action")}`,
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function (response) {
+                    console.dir(response)
+                }
+            })
+        })
+    }
+
     const listenerAddDeleteRole = () => {
         $(".addRole, .deleteRole").on("click", function (event) {
             event.preventDefault();

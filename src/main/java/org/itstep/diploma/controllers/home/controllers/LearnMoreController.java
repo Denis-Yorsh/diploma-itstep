@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/learnMore/")
 public class LearnMoreController {
 
-    @PostMapping("/individualTravelPage")
-    public String individualTravel() {
-        return "site/individualTravelPage";
-    }
+	@PostMapping("/individualTravelPage")
+	public String individualTravel() {
+		return "site/individualTravelPage";
+	}
 
-    @PostMapping("/italyPage")
-    public String italyPage() {
-        return "site/italyPage";
-    }
+	@PostMapping("/italyPage")
+	public String italyPage() {
+		return "site/italyPage";
+	}
 
-    @PostMapping("/adventurePage")
-    public String adventurePage() {
-        return "site/adventurePage";
-    }
+	@PostMapping("/adventurePage")
+	public String adventurePage() {
+		return "site/adventurePage";
+	}
 
-    @PostMapping("/beachToursPage")
-    public String beachToursPage() {
-        return "site/beachToursPage";
-    }
+	@PostMapping("/beachToursPage")
+	public String beachToursPage() {
+		return "site/beachToursPage";
+	}
 }

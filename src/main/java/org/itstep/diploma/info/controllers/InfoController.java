@@ -29,7 +29,7 @@ public class InfoController {
 						  @PathVariable("email") String email,
 						  @PathVariable("massage") String massage,
 						  ContactMessage contactMessage) {
-			contactService.addContactMessage(contactMessage, name, email, massage);
+		contactService.addContactMessage(contactMessage, name, email, massage);
 		return "redirect:/";
 	}
 }

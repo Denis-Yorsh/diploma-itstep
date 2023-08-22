@@ -23,7 +23,8 @@
             <a th:href="@{/login}">LogIn</a>
             <a th:href="@{/registration}">Welcome guest</a>
         </th:block>
-        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
+        <th:block
+                th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
             <a th:href="@{/logout}">LogOut</a>
             <a th:href="@{/logout}">
                 <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
@@ -44,55 +45,27 @@
         <div class="u-blog u-expanded-width u-blog-1">
             <div class="u-repeater u-repeater-1">
 
-                <!--blog_post-->
-                <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover u-white
-                u-repeater-item-3">
-                    <div class="u-container-layout u-similar-container u-container-layout-1">
-                        <a class="u-post-header-link" href="#">
-                            <img alt="" class="u-blog-control u-image u-image-default u-image-1"
-                                 th:src="@{../images/blog/blogHomePage/8ad73f3c.jpeg}"></a>
-                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-1">
-                            <span class="u-meta-date u-meta-icon">05 июл. 2023 г.</span>
+                <th:block th:if="${allPost != null}">
+                    <th:block th:each="post : ${allPost}">
+                        <!--blog_post-->
+                        <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover
+                            u-white u-repeater-item-3">
+                            <div class="u-container-layout u-similar-container u-container-layout-3">
+                                <a class="u-post-header-link" href="#">
+                                    <img alt="" class="u-blog-control u-image u-image-default u-image-3"
+                                         th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}"></a>
+                                <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-3">
+                                    <span class="u-meta-date u-meta-icon" th:text="*{post.getDateOfPost()}"></span>
+                                </div>
+                                <h4 class="u-blog-control u-text u-text-4">
+                                    <a class="u-post-header-link" href="#" th:text="*{post.getPostTitle()}"></a>
+                                </h4>
+                            </div>
                         </div>
-                        <h4 class="u-blog-control u-text u-text-2">
-                            <a class="u-post-header-link" href="#">Заголовок 6-го поста</a>
-                        </h4>
-                    </div>
-                </div>
+                    </th:block>
+                </th:block>
 
-                <!--blog_post-->
-                <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover
-                u-white u-repeater-item-3">
-                    <div class="u-container-layout u-similar-container u-container-layout-2">
-                        <a class="u-post-header-link" href="#">
-                            <img alt="" class="u-blog-control u-image u-image-default u-image-2"
-                                 th:src="@{../images/blog/blogHomePage/68f64b9d.jpeg}"></a>
-                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-2">
-                            <span class="u-meta-date u-meta-icon">05 июл. 2023 г.</span>
-                        </div>
-                        <h4 class="u-blog-control u-text u-text-3">
-                            <a class="u-post-header-link" href="#">Заголовок 5-го поста</a>
-                        </h4>
-                    </div>
-                </div>
-
-                <!--blog_post-->
-                <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover
-                u-white u-repeater-item-3">
-                    <div class="u-container-layout u-similar-container u-container-layout-3">
-                        <a class="u-post-header-link" href="#">
-                            <img alt="" class="u-blog-control u-image u-image-default u-image-3"
-                                 th:src="@{../images/blog/blogHomePage/0fd3416c.jpeg}"></a>
-                        <div class="u-blog-control u-metadata u-text-grey-30 u-metadata-3">
-                            <span class="u-meta-date u-meta-icon">05 июл. 2023 г.</span>
-                        </div>
-                        <h4 class="u-blog-control u-text u-text-4">
-                            <a class="u-post-header-link" href="#">Заголовок 4-го поста</a>
-                        </h4>
-                    </div>
-                </div>
-
-                <!--blog_post-->
+                <!--blog_post_static-->
                 <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover
                 u-white u-repeater-item-3">
                     <div class="u-container-layout u-similar-container u-container-layout-3">
@@ -108,7 +81,7 @@
                     </div>
                 </div>
 
-                <!--blog_post-->
+                <!--blog_post_static-->
                 <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover
                 u-white u-repeater-item-3">
                     <div class="u-container-layout u-similar-container u-container-layout-3">
@@ -124,7 +97,7 @@
                     </div>
                 </div>
 
-                <!--blog_post-->
+                <!--blog_post_static-->
                 <div class="u-align-center u-blog-post u-container-style u-repeater-item u-video-cover
                 u-white u-repeater-item-3">
                     <div class="u-container-layout u-similar-container u-container-layout-3">
@@ -139,6 +112,7 @@
                         </h4>
                     </div>
                 </div>
+
             </div>
         </div>
         <p class="u-text u-text-body-alt-color u-text-default u-text-8"></p>

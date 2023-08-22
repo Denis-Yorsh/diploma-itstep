@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--------------------------------------------------->
+<form id="dk-my-form" method="post" th:action="@{/post/addPost}" enctype="multipart/form-data">
+    <div>
+        <input type="text" name="postTitle" placeholder="Post title"/>
+        <input id="imageFile" type="file" accept="image/*" name="imageFile"/>
+        <textarea name="textOfPost" placeholder="Text Of Post"></textarea>
+        <a>
+            <button type="submit">Send</button>
+        </a>
+    </div>
+</form>
+<!--------------------------------------------------->
+</body>
+</html>
