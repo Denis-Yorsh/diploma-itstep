@@ -1,4 +1,4 @@
-package org.itstep.diploma.controllers.login.logout.controllers;
+package org.itstep.diploma.controllers.login.logout.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

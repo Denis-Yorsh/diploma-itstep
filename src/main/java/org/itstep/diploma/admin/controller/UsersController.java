@@ -1,7 +1,6 @@
-package org.itstep.diploma.admin.controllers;
+package org.itstep.diploma.admin.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.websocket.WsWebSocketContainer;
 import org.itstep.diploma.admin.service.AdminService;
 import org.itstep.diploma.configs.security.entity.Users;
 import org.springframework.stereotype.Controller;

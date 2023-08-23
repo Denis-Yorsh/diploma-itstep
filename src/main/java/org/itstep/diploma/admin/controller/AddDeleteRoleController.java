@@ -1,11 +1,10 @@
-package org.itstep.diploma.admin.controllers;
+package org.itstep.diploma.admin.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.admin.dto.AddDeleteRoleDto;
 import org.itstep.diploma.admin.service.AddDeleteRoleService;
 import org.itstep.diploma.configs.security.entity.Roles;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,10 +29,10 @@ public class AddDeleteRoleController {
 	@PostMapping("/addRole")
 	public String addRole(@Validated AddDeleteRoleDto addDeleteRoleDto, BindingResult bindingResult, Roles role) {
 		if (bindingResult.hasErrors()) {
-			return "add---" + Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage();
+			return Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage();
 		}
 		return addDeleteRoleDto.getRole().equals("noChoice")
-				? "add---role no choice"
+				? "role no choice"
 				: addDeleteRoleService.addRole(addDeleteRoleDto, role);
 	}
 
@@ -41,10 +40,10 @@ public class AddDeleteRoleController {
 	@DeleteMapping("/deleteRole")
 	public String deleteRole(@Validated AddDeleteRoleDto addDeleteRoleDto, BindingResult bindingResult, Roles role) {
 		if (bindingResult.hasErrors()) {
-			return "delete---" + Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage();
+			return Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage();
 		}
 		return addDeleteRoleDto.getRole().equals("noChoice")
-				? "delete---role no choice"
+				? "role no choice"
 				: addDeleteRoleService.deleteRole(addDeleteRoleDto, role);
 	}
 }

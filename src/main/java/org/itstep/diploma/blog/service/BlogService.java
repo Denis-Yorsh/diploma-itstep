@@ -1,4 +1,4 @@
-package org.itstep.diploma.controllers.blog.service;
+package org.itstep.diploma.blog.service;
 
 import org.itstep.diploma.post.entity.Post;
 

@@ -1,8 +1,9 @@
-package org.itstep.diploma.controllers.blog.service;
+package org.itstep.diploma.blog.service;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.post.entity.Post;
 import org.itstep.diploma.post.repository.PostRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +17,7 @@ public class BlogServiceImp implements BlogService {
 	@Transactional(readOnly = true)
 	@Override
 	public Optional<List<Post>> getAllPosts() {
-		List<Post> allPosts = postRepository.findAll();
+		List<Post> allPosts = postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 		if (allPosts.isEmpty()) {
 			return Optional.empty();
 		}

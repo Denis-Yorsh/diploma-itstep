@@ -30,7 +30,7 @@ $(() => {
         })
     })
 
-    $(".home-role").on("click", function (event) {
+    $(".add-delete-role").on("click", function (event) {
         event.preventDefault();
         $.ajax({
             type: "POST",
@@ -40,7 +40,8 @@ $(() => {
             success: function (response) {
                 let data = response.split("<!--------------------------------------------------->")
                 $(".data").html(data[1]);
-                listenerAddDeleteRole()
+                listenerAddRole()
+                listenerDeleteRole()
             },
         })
     })
@@ -63,6 +64,14 @@ $(() => {
     const listenerAddPost = () => {
         $("#dk-my-form").on("submit", function (event) {
             event.preventDefault();
+            if (!$(".postTitle").val() || !$(".imageFile").val() || !$(".textOfPost").val()) {
+                $(".validate").text("all filed must be no empty")
+                return
+            }
+            if ($(".imageFile")[0].files[0].size >= 1048576) {
+                $(".validate").text("file is too big max size img files 1 048 576 bytes")
+                return
+            }
             let thatForm = $(this)
             let formData = new FormData(thatForm.get(0));
             $.ajax({
@@ -72,46 +81,56 @@ $(() => {
                 processData: false,
                 data: formData,
                 success: function (response) {
-                    console.dir(response)
+                    $(".validate").text(response)
+                    $(".postTitle").val("")
+                    $(".imageFile").val(null)
+                    $(".textOfPost").val("")
                 }
             })
         })
     }
 
-    const listenerAddDeleteRole = () => {
-        $(".addRole, .deleteRole").on("click", function (event) {
-            event.preventDefault();
-            const witchRoleArray = $(this).attr("href").split("/")
-            let witchUsername;
-            let witchRole;
-            let httpMethod;
-            if (witchRoleArray[2] === "addRole") {
-                witchUsername = $(".addRole-input").val()
-                witchRole = $(".addRoleSelect").val()
-                httpMethod = "POST"
-            } else {
-                witchUsername = $(".deleteRole-input").val()
-                witchRole = $(".deleteRoleSelect").val()
-                httpMethod = "DELETE"
-            }
+    const listenerAddRole = () => {
+        $(".addRole").on("click", function (event) {
+            event.preventDefault()
             $.ajax({
-                type: httpMethod,
+                type: "POST",
                 url: `${$(this).attr("href")}`,
                 data: {
-                    username: witchUsername,
-                    role: witchRole,
+                    username: $(".addRole-input").val(),
+                    role: $(".addRoleSelect").val(),
                     _csrf: $(".csrf").val()
                 },
                 dataType: "text",
                 success: function (response) {
-                    let respArray = response.split("---")
                     $(".dk-response-add, .dk-response-delete").text("")
-                    if (respArray[0] === "add") {
-                        $(".dk-response-add").text(respArray[1])
-                    } else if (respArray[0] === "delete") {
-                        $(".dk-response-delete").text(respArray[1])
+                    if (response === "role is added") {
+                        $(".addRole-input").val("")
                     }
+                    $(".dk-response-add").text(response)
+                }
+            })
+        })
+    }
+    const listenerDeleteRole = () => {
+        $(".deleteRole").on("click", function (event) {
+            event.preventDefault()
+            $.ajax({
+                type: "DELETE",
+                url: `${$(this).attr("href")}`,
+                data: {
+                    username: $(".deleteRole-input").val(),
+                    role: $(".deleteRoleSelect").val(),
+                    _csrf: $(".csrf").val()
                 },
+                dataType: "text",
+                success: function (response) {
+                    $(".dk-response-add, .dk-response-delete").text("")
+                    if (response === "role is deleted") {
+                        $(".deleteRole-input").val("")
+                    }
+                    $(".dk-response-delete").text(response)
+                }
             })
         })
     }

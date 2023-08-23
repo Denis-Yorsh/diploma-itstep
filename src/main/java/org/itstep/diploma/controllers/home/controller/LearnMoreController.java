@@ -1,4 +1,4 @@
-package org.itstep.diploma.controllers.home.controllers;
+package org.itstep.diploma.controllers.home.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -6,9 +6,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
-    <link rel="stylesheet" th:href="@{../css/adminHomePage.css}" media="screen">
+    <link rel="stylesheet" th:href="@{../css/userHomePage.css}" media="screen">
     <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
-    <script class="script" th:src="@{../js/adminHomePage.js}"></script>
+    <script class="script" th:src="@{../js/userHomePage.js}"></script>
     <title>Admin page</title>
 
 </head>
@@ -20,7 +20,7 @@
         <a th:href="@{/info/contacts}">Contacts</a>
         <a th:href="@{/info/aboutus}">About us</a>
         <a th:href="@{/logout}">LogOut</a>
-        <a th:href="@{/adminHome}">
+        <a th:href="@{/userPage/homePage}">
             <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
         </a>
     </nav>
@@ -28,14 +28,14 @@
 
 <main>
     <nav class="dk-mt-10">
-        <a class="contact-messages" th:href="@{/getAllContactMessages}">Contacts Messages</a>
-        <a class="users" th:href="@{/getAllUsers}">All users</a>
+        <a class="settings" th:href="@{#}">Settings</a>
     </nav>
-    <nav>
-        <a class="add-delete-role" th:href="@{/homeRole/}">Add or delete User's ROLE</a>
-        <a class="add-post" th:href="@{/post/homePost}">Add POST</a>
-        <a class="all-posts" th:href="@{#}">All POSTS</a>
-    </nav>
+    <th:block th:if="${#authorization.expression('hasRole(''ROLE_WRITER'')')}">
+        <nav>
+            <a class="add-post" th:href="@{/post/homePost}">Add POST</a>
+            <a class="all-posts" th:href="@{#}">All POSTS</a>
+        </nav>
+    </th:block>
     <div class="data"></div>
 </main>
 

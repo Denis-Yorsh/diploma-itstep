@@ -1,7 +1,7 @@
-package org.itstep.diploma.controllers.blog.controllers;
+package org.itstep.diploma.blog.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.controllers.blog.service.BlogService;
+import org.itstep.diploma.blog.service.BlogService;
 import org.itstep.diploma.post.entity.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package org.itstep.diploma.info.controllers;
+package org.itstep.diploma.info.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.info.entity.ContactMessage;

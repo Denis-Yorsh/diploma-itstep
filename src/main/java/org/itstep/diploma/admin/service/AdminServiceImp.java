@@ -53,15 +53,15 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 						.stream()
 						.anyMatch(roles -> roles.getAuthority().equals(addDeleteRoleDto.getRole()));
 				if (isExist) {
-					return "add---role %s is already exist in this user".formatted(addDeleteRoleDto.getRole());
+					return "role %s is already exist in this user".formatted(addDeleteRoleDto.getRole());
 				}
 				userByUsername.addRole(role);
-				return "add---role is added";
+				return "role is added";
 			}
-			response = ("add---role is not added, " +
+			response = ("role is not added, " +
 						"user %s does not exist").formatted(addDeleteRoleDto.getUsername());
 		} catch (Exception e) {
-			response = "add---" + e.getMessage();
+			response = e.getMessage();
 		}
 		return response;
 	}
@@ -80,15 +80,15 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 						.stream()
 						.anyMatch(roles -> roles.getAuthority().equals(addDeleteRoleDto.getRole()));
 				if (!isExist) {
-					return "delete---role %s no exist in this user".formatted(addDeleteRoleDto.getRole());
+					return "role %s no exist in this user".formatted(addDeleteRoleDto.getRole());
 				}
 				userByUsername.removeRole(role);
-				return "delete---role is deleted";
+				return "role is deleted";
 			}
-			response = ("delete---role is not deleted, " +
+			response = ("role is not deleted, " +
 						"user %s does not exist").formatted(addDeleteRoleDto.getUsername());
 		} catch (Exception e) {
-			response = "delete---" + e.getMessage();
+			response = e.getMessage();
 		}
 		return response;
 	}
