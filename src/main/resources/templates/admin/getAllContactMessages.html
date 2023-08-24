@@ -23,7 +23,7 @@
             <td th:text="*{message.getName()}"></td>
             <td th:text="*{message.getMassage()}"></td>
             <td th:text="*{message.getEmail()}"></td>
-            <td><a class="delete" th:href="@{*{message.getId()}}">DELETE</a></td>
+            <td><a class="delete-contact-messages" th:href="@{*{message.getId()}}">DELETE</a></td>
         </tr>
     </th:block>
     </tbody>

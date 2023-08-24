@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -47,5 +49,22 @@ public class PostServiceImp implements PostService {
 			response = e.getMessage();
 		}
 		return response;
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public Optional<List<Post>> getAllPost() {
+		List<Post> all = postRepository.findAll();
+		if (all.isEmpty()) {
+			return Optional.empty();
+		}
+		return Optional.of(all);
+	}
+
+	@Transactional
+	@Override
+	public void deletePost(Long id) {
+		Optional<Post> optionalById = postRepository.findById(id);
+		optionalById.ifPresent(postRepository::delete);
 	}
 }

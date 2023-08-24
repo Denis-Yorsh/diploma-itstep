@@ -33,7 +33,7 @@
     <th:block th:if="${#authorization.expression('hasRole(''ROLE_WRITER'')')}">
         <nav>
             <a class="add-post" th:href="@{/post/homePost}">Add POST</a>
-            <a class="all-posts" th:href="@{#}">All POSTS</a>
+            <a class="all-posts" th:href="@{/post/allPosts}">All POSTS</a>
         </nav>
     </th:block>
     <div class="data"></div>

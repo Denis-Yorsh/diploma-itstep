@@ -16,6 +16,41 @@ $(() => {
         })
     })
 
+    $(".all-posts").on("click", function (event) {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: `${$(this).attr("href")}`,
+            data: {_csrf: $(".csrf").val()},
+            dataType: "text",
+            success: function (response) {
+                let data = response.split("<!--------------------------------------------------->")
+                $(".data").html(data[1]);
+                listenerDeletePost()
+            }
+        })
+    })
+
+    const listenerDeletePost = () => {
+        $(".delete-post").on("click", function (event) {
+            event.preventDefault();
+            $.ajax({
+                type: "DELETE",
+                url: "/post/deletePost",
+                data: {
+                    id: `${$(this).attr("href")}`,
+                    _csrf: $(".csrf").val()
+                },
+                dataType: "text",
+                success: function (response) {
+                    let data = response.split("<!--------------------------------------------------->")
+                    $(".data").html(data[1]);
+                    listenerDeletePost()
+                },
+            })
+        })
+    }
+
     const listenerAddPost = () => {
         $("#dk-my-form").on("submit", function (event) {
             event.preventDefault();

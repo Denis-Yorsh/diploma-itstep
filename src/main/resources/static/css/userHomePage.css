@@ -66,3 +66,20 @@ button {
 .validate {
     color: red;
 }
+
+/*--------------------------------------------------- All Posts */
+
+.image {
+    max-width: 10vw;
+}
+
+table {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+td {
+    max-width: 15vw;
+    overflow-wrap: break-word;
+    text-align: center;
+}

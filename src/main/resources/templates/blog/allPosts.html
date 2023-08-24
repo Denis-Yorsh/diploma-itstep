@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--------------------------------------------------->
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>image</th>
+        <th>post title</th>
+        <th>author</th>
+        <th>text of posts</th>
+        <th>date of posts</th>
+        <th>delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="post : ${allPosts}">
+        <tr>
+            <td th:text="*{post.getId()}"></td>
+            <td><img class="image" th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}"></td>
+            <td th:text="*{post.getPostTitle()}"></td>
+            <td th:text="*{post.getAuthor()}"></td>
+            <td th:text="*{post.getTextOfPost()}"></td>
+            <td th:text="*{post.getDateOfPost()}"></td>
+            <td><a class="delete-post" th:href="@{*{post.getId()}}">DELETE</a></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+<!--------------------------------------------------->
+</body>
+</html>
