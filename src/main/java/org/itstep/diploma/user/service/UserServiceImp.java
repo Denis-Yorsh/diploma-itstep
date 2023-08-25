@@ -51,6 +51,6 @@ public class UserServiceImp implements UserService {
 			user.getUsersRegistration().setDayBirthday(userChangeRegistrationDataDto.getDayBirthday() == null ?
 					user.getUsersRegistration().getDayBirthday() : userChangeRegistrationDataDto.getDayBirthday());
 		}
-		return "OK";
+		return "changes saved";
 	}
 }
