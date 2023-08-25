@@ -32,7 +32,7 @@ public class InitDatabase implements CommandLineRunner {
 
 	@Transactional
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		roleAdmin.setAuthority("ROLE_ADMIN");
 		roleWriter.setAuthority("ROLE_WRITER");
 		roleUser.setAuthority("ROLE_USER");
