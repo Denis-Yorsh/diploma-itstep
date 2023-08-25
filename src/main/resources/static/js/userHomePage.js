@@ -76,11 +76,6 @@ $(() => {
                 },
                 dataType: "text",
                 success: function (response) {
-                    // const responseArray = response.split("-")
-                    // $(responseArray).each(function (i, val) {
-                    //     validate.append(val)
-                    //     validate.append("<br>")
-                    // })
                     validate.text(response)
                 }
             })
