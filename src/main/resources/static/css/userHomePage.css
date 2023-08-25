@@ -83,3 +83,11 @@ td {
     overflow-wrap: break-word;
     text-align: center;
 }
+
+/*--------------------------------------------------- Settings */
+
+.form-settings {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20vw;
+}

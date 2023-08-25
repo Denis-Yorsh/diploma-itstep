@@ -42,9 +42,7 @@ public class InitDatabase implements CommandLineRunner {
 		if (optionalAdmin.isPresent()) {
 			Users user = optionalAdmin.get();
 			user.setPassword(passwordEncoder.encode(password));
-			user.removeUsersRegistration();
-			userRepository.flush();
-			user.addUsersRegistration(usersRegistration);
+			user.getUsersRegistration().setEmail(email);
 			return;
 		}
 

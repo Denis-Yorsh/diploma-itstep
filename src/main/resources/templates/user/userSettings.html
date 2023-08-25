@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--------------------------------------------------->
+<form class="form-settings" th:action="@{/userPage/changeRegistrationData}" method="post">
+    <div>CHANGE REGISTRATION DATA</div>
+    <div class="validate dk-mb-1"></div>
+    <input class="first-name dk-mb-1 border" type="text" placeholder="First Name">
+    <input class="last-name dk-mb-1 border" type="text" placeholder="Last Name">
+    <input class="day-birthday dk-mb-1 border" onfocus="(this.type='date')" placeholder="Day of Birthday">
+    <input class="email dk-mb-1 border" type="email" placeholder="Email">
+    <input class="username dk-mb-1 border" type="text" placeholder="User Name">
+    <input class="password dk-mb-1 border" type="password" placeholder="Password">
+    <input class="repeat-password dk-mb-1 border" type="password" placeholder="Repeat password">
+    <button type="submit">Send</button>
+</form>
+<!--------------------------------------------------->
+</body>
+</html>

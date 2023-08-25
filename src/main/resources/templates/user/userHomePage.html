@@ -28,7 +28,7 @@
 
 <main>
     <nav class="dk-mt-10">
-        <a class="settings" th:href="@{#}">Settings</a>
+        <a class="settings" th:href="@{/userPage/settings}">Settings</a>
     </nav>
     <th:block th:if="${#authorization.expression('hasRole(''ROLE_WRITER'')')}">
         <nav>
