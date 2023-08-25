@@ -110,11 +110,12 @@ $(() => {
     const listenerAddPost = () => {
         $("#dk-my-form").on("submit", function (event) {
             event.preventDefault();
-            if (!$(".postTitle").val() || !$(".imageFile").val() || !$(".textOfPost").val()) {
+            const imageFile = $(".imageFile").val()
+            if (!$(".postTitle").val() || !$(imageFile).val() || !$(".textOfPost").val()) {
                 $(".validate").text("all filed must be no empty")
                 return
             }
-            if ($(".imageFile")[0].files[0].size >= 1048576) {
+            if ($(imageFile)[0].files[0].size >= 1048576) {
                 $(".validate").text("file is too big max size img files 1 048 576 bytes")
                 return
             }
