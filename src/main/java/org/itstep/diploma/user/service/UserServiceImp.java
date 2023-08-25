@@ -37,12 +37,20 @@ public class UserServiceImp implements UserService {
 		if (optionalUsersByUsername.isPresent()) {
 			user = optionalUsersByUsername.get();
 		}
-		user.setUsername(userChangeRegistrationDataDto.getUsername().isBlank() ? user.getUsername() : userChangeRegistrationDataDto.getUsername());
-		user.setPassword(userChangeRegistrationDataDto.getPassword().isBlank() ? user.getPassword() : passwordEncoder.encode(userChangeRegistrationDataDto.getPassword()));
-		user.getUsersRegistration().setFirstName(userChangeRegistrationDataDto.getFirstName().isBlank() ? user.getUsersRegistration().getFirstName() : userChangeRegistrationDataDto.getFirstName());
-		user.getUsersRegistration().setLastName(userChangeRegistrationDataDto.getLastName().isBlank() ? user.getUsersRegistration().getLastName() : userChangeRegistrationDataDto.getLastName());
-		user.getUsersRegistration().setEmail(userChangeRegistrationDataDto.getEmail().isBlank() ? user.getUsersRegistration().getEmail() : userChangeRegistrationDataDto.getEmail());
-		user.getUsersRegistration().setDayBirthday(userChangeRegistrationDataDto.getDayBirthday() == null ? user.getUsersRegistration().getDayBirthday() : userChangeRegistrationDataDto.getDayBirthday());
+		if (user != null) {
+			user.setUsername(userChangeRegistrationDataDto.getUsername().isBlank() ?
+					user.getUsername() : userChangeRegistrationDataDto.getUsername());
+			user.setPassword(userChangeRegistrationDataDto.getPassword().isBlank() ?
+					user.getPassword() : passwordEncoder.encode(userChangeRegistrationDataDto.getPassword()));
+			user.getUsersRegistration().setFirstName(userChangeRegistrationDataDto.getFirstName().isBlank() ?
+					user.getUsersRegistration().getFirstName() : userChangeRegistrationDataDto.getFirstName());
+			user.getUsersRegistration().setLastName(userChangeRegistrationDataDto.getLastName().isBlank() ?
+					user.getUsersRegistration().getLastName() : userChangeRegistrationDataDto.getLastName());
+			user.getUsersRegistration().setEmail(userChangeRegistrationDataDto.getEmail().isBlank() ?
+					user.getUsersRegistration().getEmail() : userChangeRegistrationDataDto.getEmail());
+			user.getUsersRegistration().setDayBirthday(userChangeRegistrationDataDto.getDayBirthday() == null ?
+					user.getUsersRegistration().getDayBirthday() : userChangeRegistrationDataDto.getDayBirthday());
+		}
 		return "OK";
 	}
 }
