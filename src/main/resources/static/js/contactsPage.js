@@ -6,9 +6,10 @@ $(() => {
         const email = $(".email").val().trim()
         const message = $(".message").val().trim()
         $(".massage").text("")
+        let validate = false
 
         if (!name || !email || !message) {
-            event.preventDefault();
+            validate = true
             if (!name) {
                 $(".massageName").text("field must be no blank")
             }
@@ -20,16 +21,20 @@ $(() => {
             }
         }
         if (!validateEmail(email)) {
-            event.preventDefault();
+            validate = true
             $(".validateEmail").text(email + " email is invalid")
         }
         if (name.length > 50) {
-            event.preventDefault();
+            validate = true
             $(".massageMassage").text("name must not exceed 50 characters")
         }
         if (message.length > 1000) {
-            event.preventDefault();
+            validate = true
             $(".massageMassage").text("message must not exceed 1000 characters")
+        }
+
+        if (validate) {
+            event.preventDefault();
         }
 
         $(this).attr("href", `/info/massage/${name}/${email}/${message}`)
