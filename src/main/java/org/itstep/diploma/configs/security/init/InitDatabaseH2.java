@@ -23,6 +23,7 @@ public class InitDatabaseH2 implements CommandLineRunner {
 	private final UsersRegistration usersRegistrationAdmin;
 	private final UsersRegistration usersRegistrationUser;
 	private final Roles roleAdminForAdmin;
+	private final Roles roleWriterForAdmin;
 	private final Roles roleUserForAdmin;
 	private final Roles rolUserForUser;
 	@Value("${spring.security.test.admin.password:admin}")
@@ -40,6 +41,7 @@ public class InitDatabaseH2 implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		roleAdminForAdmin.setAuthority("ROLE_ADMIN");
+		roleWriterForAdmin.setAuthority("ROLE_WRITER");
 		roleUserForAdmin.setAuthority("ROLE_USER");
 		rolUserForUser.setAuthority("ROLE_USER");
 
@@ -54,7 +56,7 @@ public class InitDatabaseH2 implements CommandLineRunner {
 		userRepository.save(userAdmin);
 		userRepository.save(userUser);
 
-		userAdmin.addRole(roleAdminForAdmin, roleUserForAdmin);
+		userAdmin.addRole(roleAdminForAdmin, roleWriterForAdmin, roleUserForAdmin);
 		userAdmin.addUsersRegistration(usersRegistrationAdmin);
 		userUser.addRole(rolUserForUser);
 		userUser.addUsersRegistration(usersRegistrationUser);

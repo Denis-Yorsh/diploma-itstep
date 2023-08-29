@@ -1,4 +1,4 @@
-package org.itstep.diploma.info.controllers;
+package org.itstep.diploma.info.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.info.entity.ContactMessage;
@@ -29,7 +29,7 @@ public class InfoController {
 						  @PathVariable("email") String email,
 						  @PathVariable("massage") String massage,
 						  ContactMessage contactMessage) {
-			contactService.addContactMessage(contactMessage, name, email, massage);
+		contactService.addContactMessage(contactMessage, name, email, massage);
 		return "redirect:/";
 	}
 }

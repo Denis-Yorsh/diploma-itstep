@@ -2,6 +2,7 @@ package org.itstep.diploma.configs.security.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
@@ -9,8 +10,9 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name = "roles_table")
 @Data
+@EqualsAndHashCode(exclude = {"id", "user"})
 @Component
-@Scope("prototype")
+@Scope(scopeName = "prototype")
 public final class Roles implements GrantedAuthority {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

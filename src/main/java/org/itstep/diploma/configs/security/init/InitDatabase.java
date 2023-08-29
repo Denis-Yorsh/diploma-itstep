@@ -22,6 +22,7 @@ public class InitDatabase implements CommandLineRunner {
 	private final PasswordEncoder passwordEncoder;
 	private final Users admin;
 	private final Roles roleAdmin;
+	private final Roles roleWriter;
 	private final Roles roleUser;
 	private final UsersRegistration usersRegistration;
 	@Value("${spring.security.admin.password:admin}")
@@ -31,8 +32,9 @@ public class InitDatabase implements CommandLineRunner {
 
 	@Transactional
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		roleAdmin.setAuthority("ROLE_ADMIN");
+		roleWriter.setAuthority("ROLE_WRITER");
 		roleUser.setAuthority("ROLE_USER");
 		usersRegistration.setEmail(email);
 
@@ -40,9 +42,7 @@ public class InitDatabase implements CommandLineRunner {
 		if (optionalAdmin.isPresent()) {
 			Users user = optionalAdmin.get();
 			user.setPassword(passwordEncoder.encode(password));
-			user.removeUsersRegistration();
-			userRepository.flush();
-			user.addUsersRegistration(usersRegistration);
+			user.getUsersRegistration().setEmail(email);
 			return;
 		}
 
@@ -51,7 +51,7 @@ public class InitDatabase implements CommandLineRunner {
 
 		userRepository.save(admin);
 
-		admin.addRole(roleAdmin, roleUser);
+		admin.addRole(roleAdmin, roleWriter, roleUser);
 		admin.addUsersRegistration(usersRegistration);
 	}
 }

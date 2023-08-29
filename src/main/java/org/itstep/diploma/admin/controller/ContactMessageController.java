@@ -1,4 +1,4 @@
-package org.itstep.diploma.admin.controllers;
+package org.itstep.diploma.admin.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.admin.service.AdminService;
@@ -8,8 +8,6 @@ import org.itstep.diploma.info.service.ContactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;

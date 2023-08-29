@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--------------------------------------------------->
+<div class="dk-cont-role">
+    <div class="dk-cont-add-delete-role">
+        <div class="dk-mb-1 dk-size">Add Role</div>
+        <input class="addRole-input dk-mb-1 dk-size" type="text" placeholder="User Name" name="username" required>
+        <select class="addRoleSelect dk-mb-1 dk-size">
+            <option value="noChoice">Do a choice</option>
+            <option value="ROLE_WRITER">ROLE_WRITER</option>
+        </select>
+        <a class="addRole dk-size" th:href="@{/homeRole/addRole}">
+            <button>Send</button>
+        </a>
+        <div class="dk-response-add"></div>
+    </div>
+    <div class="dk-cont-add-delete-role">
+        <div class="dk-mb-1 dk-size">Delete Role</div>
+        <input class="deleteRole-input dk-mb-1 dk-size" type="text" placeholder="User Name" name="username" required>
+        <select class="deleteRoleSelect dk-mb-1 dk-size">
+            <option value="noChoice">Do a choice</option>
+            <option value="ROLE_WRITER">ROLE_WRITER</option>
+        </select>
+        <a class="deleteRole dk-size" th:href="@{/homeRole/deleteRole}">
+            <button>Send</button>
+        </a>
+        <div class="dk-response-delete"></div>
+    </div>
+</div>
+<!--------------------------------------------------->
+</body>
+</html>

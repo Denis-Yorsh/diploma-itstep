@@ -22,7 +22,7 @@
         </th:block>
         <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
             <a th:href="@{/logout}">LogOut</a>
-            <a th:href="@{/logout}">
+            <a th:href="@{/userPage/homePage}">
                 <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
             </a>
         </th:block>

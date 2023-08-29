@@ -15,7 +15,7 @@ public class ContactServiceImp implements ContactService {
 
 	@Transactional
 	@Override
-	public void addContactMessage(ContactMessage contactMessage,String name, String email, String message) {
+	public void addContactMessage(ContactMessage contactMessage, String name, String email, String message) {
 		contactMessage.setName(name);
 		contactMessage.setEmail(email);
 		contactMessage.setMassage(message);

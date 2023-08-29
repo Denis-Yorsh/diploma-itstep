@@ -1,4 +1,4 @@
-package org.itstep.diploma.controllers.home.controllers;
+package org.itstep.diploma.controllers.home.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
-    public String homePage() {
-        return "site/homePage";
-    }
+	@GetMapping("/")
+	public String homePage() {
+		return "site/homePage";
+	}
 }

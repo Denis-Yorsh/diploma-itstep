@@ -17,6 +17,8 @@
  - CSS 3
  - JavaScript
  - jQuery
+### Website Templates:
+ - https://nicepage.com/ru/html-shablony
 ###
 ![registration.jpeg](images%2Fregistration.jpeg)
 ![registration_validation.jpeg](images%2Fregistration_validation.jpeg)

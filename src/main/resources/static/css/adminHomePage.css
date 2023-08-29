@@ -20,7 +20,6 @@ main nav {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: 10vh;
     margin-bottom: 1vh;
     background-color: rgba(170, 246, 227, 0.3);
 }
@@ -29,6 +28,12 @@ main nav a {
     font-size: 2vw;
     color: black;
 }
+
+.dk-mt-10 {
+    margin-top: 10vh;
+}
+
+/*--------------------------------------------------- Contact message, All Posts */
 
 table {
     min-width: 100%;
@@ -39,4 +44,63 @@ td {
     max-width: 15vw;
     overflow-wrap: break-word;
     text-align: center;
+}
+
+/*------------------- All Posts*/
+
+.image {
+    max-width: 10vw;
+}
+
+/*--------------------------------------------------- add delete role */
+.dk-mb-1 {
+    margin-bottom: 1vh;
+}
+
+.dk-size {
+    font-size: 2.5vw;
+}
+
+button {
+    width: 100%;
+}
+
+.dk-cont-role{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dk-cont-add-delete-role {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+
+.dk-response-add,
+.dk-response-delete {
+    color: red;
+    max-width: 95%;
+}
+
+/*--------------------------------------------------- add POST */
+
+#dk-my-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15vw;
+}
+
+.dk-mb-1 {
+    margin-bottom: 1vh;
+}
+
+.border {
+    border: 1px solid black;
+}
+button {
+    width: 100%;
+}
+
+.validate {
+    color: red;
 }

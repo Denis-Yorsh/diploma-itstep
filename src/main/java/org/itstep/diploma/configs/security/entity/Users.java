@@ -19,7 +19,7 @@ import java.util.Set;
 @EqualsAndHashCode(exclude = {"id", "authorities", "usersRegistration"})
 @ToString
 @Component
-@Scope("prototype")
+@Scope(scopeName = "prototype")
 public final class Users implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public final class Users implements UserDetails {
 	@Column(name = "credentials_non_expired")
 	private boolean credentialsNonExpired;
 	private boolean enabled;
-	@OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<Roles> authorities = new HashSet<>();
 	@OneToOne(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private UsersRegistration usersRegistration;
@@ -45,6 +45,11 @@ public final class Users implements UserDetails {
 			authorities.add(role);
 			role.setUser(this);
 		});
+	}
+
+	public void removeRole(Roles roles) {
+		authorities.remove(roles);
+		roles.setUser(null);
 	}
 
 	public void addUsersRegistration(UsersRegistration usersRegistration) {
