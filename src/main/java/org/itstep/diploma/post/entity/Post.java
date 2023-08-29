@@ -22,7 +22,7 @@ public class Post {
 	private String postTitle;
 	@Column(nullable = false)
 	private String author;
-	@Column(length = 2000, name = "text_of_post", nullable = false)
+	@Column(length = 10_000, name = "text_of_post", nullable = false)
 	private String textOfPost;
 	@Column(name = "date_of_post", nullable = false)
 	private LocalDate dateOfPost;

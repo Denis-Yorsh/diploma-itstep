@@ -1,6 +1,7 @@
 package org.itstep.diploma.blog.service;
 
 import lombok.RequiredArgsConstructor;
+import org.itstep.diploma.post.dto.PostDto;
 import org.itstep.diploma.post.entity.Post;
 import org.itstep.diploma.post.repository.PostRepository;
 import org.springframework.data.domain.Sort;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BlogServiceImp implements BlogService {
 	private final PostRepository postRepository;
+
 	@Transactional(readOnly = true)
 	@Override
 	public Optional<List<Post>> getAllPosts() {
@@ -22,5 +24,18 @@ public class BlogServiceImp implements BlogService {
 			return Optional.empty();
 		}
 		return Optional.of(allPosts);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public Optional<Post> getPostById(PostDto postDto) {
+		if (postDto.getId() == null) {
+			return Optional.empty();
+		}
+		Optional<Post> optionalPost = postRepository.findById(postDto.getId());
+		if (optionalPost.isPresent()) {
+			return optionalPost;
+		}
+		return Optional.empty();
 	}
 }

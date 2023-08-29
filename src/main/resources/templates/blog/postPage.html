@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{../css/postPage.css}" media="screen">
+    <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
+    <script th:src="@{../js/showPage.js}"></script>
+    <title>Post page</title>
+
+</head>
+<body class="u-body u-xl-mode" data-lang="ru" style="display: none">
+<header>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/blog/homePage}">Blog</a>
+        <a th:href="@{/info/contacts}">Contacts</a>
+        <a th:href="@{/info/aboutus}">About us</a>
+        <th:block th:if="${#authorization.expression('hasRole(''ROLE_ANONYMOUS'')')}">
+            <a th:href="@{/login}">LogIn</a>
+            <a th:href="@{/registration}">Welcome guest</a>
+        </th:block>
+        <th:block
+                th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
+            <a th:href="@{/logout}">LogOut</a>
+            <a th:href="@{/userPage/homePage}">
+                <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+            </a>
+        </th:block>
+        <th:block th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+            <a th:href="@{/logout}">LogOut</a>
+            <a th:href="@{/adminHome}">
+                <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
+            </a>
+        </th:block>
+    </nav>
+</header>
+
+<!--------------------------------------------------->
+<main class="dk-container">
+    <th:block th:if="${post}">
+        <div class="title" th:text="${post.getPostTitle()}"></div>
+        <img th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}">
+        <div class="date-of-post" th:text="${post.getDateOfPost()}"></div>
+        <div class="author" th:text="${post.getAuthor()}"></div>
+        <p class="text-of-post" th:text="${post.getTextOfPost()}"></p>
+    </th:block>
+</main>
+<!--------------------------------------------------->
+
+</body>
+</html>
