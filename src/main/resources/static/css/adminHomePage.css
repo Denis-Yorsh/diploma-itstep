@@ -33,7 +33,11 @@ main nav a {
     margin-top: 10vh;
 }
 
-/*--------------------------------------------------- Contact message, All Posts */
+.data {
+    overflow-x: scroll;
+}
+
+/*--------------------------------------------------- Table */
 
 table {
     min-width: 100%;
