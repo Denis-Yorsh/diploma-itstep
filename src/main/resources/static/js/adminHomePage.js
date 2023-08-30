@@ -100,11 +100,12 @@ $(() => {
         $("#dk-my-form").on("submit", function (event) {
             event.preventDefault();
             const textOfPost = $(".textOfPost").val()
-            if (!$(".postTitle").val() || !$(".imageFile").val() || !textOfPost) {
+            const imageFile = $(".imageFile")
+            if (!$(".postTitle").val() || !$(imageFile).val() || !textOfPost) {
                 $(".validate").text("all filed must be no empty")
                 return
             }
-            if ($(".imageFile")[0].files[0].size >= 1048576) {
+            if ($(imageFile)[0].files[0].size >= 1048576) {
                 $(".validate").text("file is too big max size img files 1 048 576 bytes")
                 return
             }
