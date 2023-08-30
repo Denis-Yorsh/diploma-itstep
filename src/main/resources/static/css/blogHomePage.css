@@ -1,18 +1,19 @@
+/*-----------------------------------------------------------------------Post Page*/
+
 .dk-container {
   display: flex;
   flex-direction: column;
-  /*margin: 10vh 20vw 0 20vw;*/
 }
 
 .title {
-  text-align: center;
+  font-size: 5vw;
   margin-bottom: 1vh;
 }
 
 .text-of-post {
   overflow-wrap: break-word;
 }
-/*-----------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------Blog Home Page*/
 header nav {
   display: flex;
   justify-content: space-around;

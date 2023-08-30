@@ -39,7 +39,7 @@ public class InitDatabaseH2 implements CommandLineRunner {
 
 	@Transactional
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		roleAdminForAdmin.setAuthority("ROLE_ADMIN");
 		roleWriterForAdmin.setAuthority("ROLE_WRITER");
 		roleUserForAdmin.setAuthority("ROLE_USER");
