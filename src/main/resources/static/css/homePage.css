@@ -694,7 +694,7 @@ height: 100vh;
 }
 
 @media (max-height: 740px) {
-  .slide {
-    height: 100%;
+  .dk-media-mt-15 {
+    margin-top: 15vh;
   }
 }
