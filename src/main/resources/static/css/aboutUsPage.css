@@ -15,7 +15,7 @@ header nav a {
 .cont {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .u-section-1 {
@@ -229,7 +229,7 @@ header nav a {
   }
 
   .u-section-1 .u-text-1 {
-    font-size: 1.5;
+    font-size: 1.5rem;
   }
 
   .u-section-1 .u-text-2 {
