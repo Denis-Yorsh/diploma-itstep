@@ -191,6 +191,10 @@ header nav a {
 }
 
 @media (max-width: 991px) {
+  .cont {
+    height: 100%;
+  }
+
   .u-section-1 .u-sheet-1 {
     min-height: 282px;
   }
@@ -219,6 +223,10 @@ header nav a {
 }
 
 @media (max-width: 767px) {
+  .cont {
+    height: 100%;
+  }
+
   .u-section-1 .u-sheet-1 {
     min-height: 382px;
   }
@@ -229,7 +237,7 @@ header nav a {
   }
 
   .u-section-1 .u-text-1 {
-    font-size: 1.5;
+    font-size: 1.5rem;
   }
 
   .u-section-1 .u-text-2 {
@@ -270,6 +278,10 @@ header nav a {
 }
 
 @media (max-width: 575px) {
+  .cont {
+    height: 100%;
+  }
+
   .u-section-1 .u-text-1 {
     font-size: 1.5rem;
   }

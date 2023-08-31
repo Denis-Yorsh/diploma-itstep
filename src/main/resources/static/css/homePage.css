@@ -411,7 +411,7 @@ height: 100vh;
 }
 .u-section-4 {
   background-image: url("../images/homePage/7d00f41ea051740564f26d37fe44fb1a.jpeg");
-  background-position: 50% 0%;
+  background-position: 50% 0;
 }
 
 .u-section-4 .u-sheet-1 {
@@ -512,7 +512,7 @@ height: 100vh;
 
 @media (max-width: 575px) {
   .u-section-4 {
-    background-position: 67.58% 0%;
+    background-position: 67.58% 0;
     background-size: auto 140%;
   }
 
@@ -557,8 +557,8 @@ height: 100vh;
 .u-section-5 .u-image-1 {
   width: 809px;
   height: 588px;
-  object-position: 0% 50%;
-  background-position: 0% 50%;
+  object-position: 0 50%;
+  background-position: 0 50%;
   margin: -684px 83px 0 auto;
 }
 
@@ -575,7 +575,7 @@ height: 100vh;
 .u-section-5 .u-text-1 {
   font-size: 4.5rem;
   letter-spacing: 2px;
-  font-family: "Advent Pro";
+  font-family: "Advent Pro", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   margin: 0;
@@ -691,4 +691,10 @@ height: 100vh;
 }
 .u-section-6 .u-sheet-1 {
   min-height: 400px;
+}
+
+@media (max-height: 740px) {
+  .dk-media-mt-15 {
+    margin-top: 15vh;
+  }
 }

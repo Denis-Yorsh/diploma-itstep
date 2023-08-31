@@ -165,12 +165,16 @@ header nav a {
 }
 
 @media (max-width: 991px) {
+  .cont {
+    height: 100%;
+  }
+
   .u-section-1 .u-sheet-1 {
     min-height: 1145px;
   }
 
   .u-section-1 .u-layout-wrap-1 {
-    margin-top: 500px;
+    margin-top: 31px;
     margin-bottom: 30px;
   }
 
@@ -196,6 +200,10 @@ header nav a {
 }
 
 @media (max-width: 767px) {
+  .cont {
+    height: 100%;
+  }
+
   .u-section-1 .u-sheet-1 {
     min-height: 1304px;
   }
@@ -224,6 +232,10 @@ header nav a {
 }
 
 @media (max-width: 575px) {
+  .cont {
+    height: 100%;
+  }
+
   .u-section-1 .u-sheet-1 {
     min-height: 1174px;
   }
@@ -238,10 +250,4 @@ header nav a {
 }
 .u-section-2 .u-sheet-1 {
   min-height: 400px;
-}
-
-@media (max-height: 720px) {
-  .u-section-1 .u-layout-wrap-1 {
-    margin-top: 550px;
-  }
 }
