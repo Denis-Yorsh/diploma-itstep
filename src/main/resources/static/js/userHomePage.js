@@ -114,10 +114,8 @@ $(() => {
         }
         const date = new Date()
         const dateBirthday = new Date(dayBirthday)
-        const localeDateBirthday = dateBirthday.toLocaleDateString()
-        const localeDateNow = date.toLocaleDateString()
         if (dayBirthday !== "") {
-            if (localeDateBirthday >= localeDateNow) {
+            if (dateBirthday >= date) {
                 validate = true
                 $(".validate-day-birthday").text("birthday must be in past time")
             }
