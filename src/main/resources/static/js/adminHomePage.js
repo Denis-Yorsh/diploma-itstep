@@ -5,7 +5,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -20,7 +20,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -34,7 +34,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -50,7 +50,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -65,7 +65,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -83,7 +83,7 @@ $(() => {
                 type: "DELETE",
                 url: "/post/deletePost",
                 data: {
-                    id: `${$(this).attr("href")}`,
+                    id: $(this).attr("href"),
                     _csrf: $(".csrf").val()
                 },
                 dataType: "text",
@@ -136,7 +136,7 @@ $(() => {
             event.preventDefault()
             $.ajax({
                 type: "POST",
-                url: `${$(this).attr("href")}`,
+                url: $(this).attr("href"),
                 data: {
                     username: $(".addRole-input").val(),
                     role: $(".addRoleSelect").val(),
@@ -158,7 +158,7 @@ $(() => {
             event.preventDefault()
             $.ajax({
                 type: "DELETE",
-                url: `${$(this).attr("href")}`,
+                url: $(this).attr("href"),
                 data: {
                     username: $(".deleteRole-input").val(),
                     role: $(".deleteRoleSelect").val(),
@@ -183,7 +183,7 @@ $(() => {
                 type: "DELETE",
                 url: "/delete",
                 data: {
-                    id: `${$(this).attr("href")}`,
+                    id: $(this).attr("href"),
                     _csrf: $(".csrf").val()
                 },
                 dataType: "text",

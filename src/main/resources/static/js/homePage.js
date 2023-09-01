@@ -26,7 +26,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {

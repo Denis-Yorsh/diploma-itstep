@@ -5,7 +5,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -20,7 +20,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -35,7 +35,7 @@ $(() => {
         event.preventDefault();
         $.ajax({
             type: "POST",
-            url: `${$(this).attr("href")}`,
+            url: $(this).attr("href"),
             data: {_csrf: $(".csrf").val()},
             dataType: "text",
             success: function (response) {
@@ -148,7 +148,7 @@ $(() => {
                 type: "DELETE",
                 url: "/post/deletePost",
                 data: {
-                    id: `${$(this).attr("href")}`,
+                    id: $(this).attr("href"),
                     _csrf: $(".csrf").val()
                 },
                 dataType: "text",

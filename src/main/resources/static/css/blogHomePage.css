@@ -8,6 +8,8 @@
 .title {
   font-size: 5vw;
   margin-bottom: 1vh;
+  max-width: 99%;
+  overflow-wrap: break-word;
 }
 
 .text-of-post {
