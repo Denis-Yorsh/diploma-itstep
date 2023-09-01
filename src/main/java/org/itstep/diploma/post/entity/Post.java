@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Component
 @Data
 @EqualsAndHashCode(exclude = {"id", "image"})
-public class Post {
+public final class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "post_id")

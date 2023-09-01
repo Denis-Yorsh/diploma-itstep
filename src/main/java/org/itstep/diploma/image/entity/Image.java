@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Table(name = "image_table")
 @EqualsAndHashCode(exclude = {"id", "post"})
-public class Image {
+public final class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
