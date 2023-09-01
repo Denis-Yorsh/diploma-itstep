@@ -2,11 +2,11 @@ package org.itstep.diploma.admin.service;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.admin.dto.AddDeleteRoleDto;
-import org.itstep.diploma.configs.security.entity.Roles;
-import org.itstep.diploma.configs.security.entity.Users;
+import org.itstep.diploma.configs.security.entity.Role;
+import org.itstep.diploma.configs.security.entity.User;
 import org.itstep.diploma.configs.security.repository.UserRepository;
-import org.itstep.diploma.info.entity.ContactMessage;
-import org.itstep.diploma.info.repository.ContactMessageRepository;
+import org.itstep.diploma.contact.message.entity.ContactMessage;
+import org.itstep.diploma.contact.message.repository.ContactMessageRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +21,7 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public Optional<List<ContactMessage>> getAll() {
+	public Optional<List<ContactMessage>> getAllContactMessage() {
 		List<ContactMessage> allMessages = contactMessageRepository.findAll();
 		if (allMessages.isEmpty()) {
 			return Optional.empty();
@@ -31,8 +31,8 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public Optional<List<Users>> getAllUsers() {
-		List<Users> allUsers = userRepository.findAll();
+	public Optional<List<User>> getAllUsers() {
+		List<User> allUsers = userRepository.findAll();
 		if (allUsers.isEmpty()) {
 			return Optional.empty();
 		}
@@ -41,13 +41,13 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 
 	@Transactional
 	@Override
-	public String addRole(AddDeleteRoleDto addDeleteRoleDto, Roles role) {
+	public String addRole(AddDeleteRoleDto addDeleteRoleDto, Role role) {
 		String response;
 		role.setAuthority(addDeleteRoleDto.getRole());
 		try {
-			Optional<Users> optionalUser = userRepository.findByUsername(addDeleteRoleDto.getUsername());
+			Optional<User> optionalUser = userRepository.findByUsername(addDeleteRoleDto.getUsername());
 			if (optionalUser.isPresent()) {
-				Users userByUsername = optionalUser.get();
+				User userByUsername = optionalUser.get();
 				boolean isExist = userByUsername
 						.getAuthorities()
 						.stream()
@@ -68,13 +68,13 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 
 	@Transactional
 	@Override
-	public String deleteRole(AddDeleteRoleDto addDeleteRoleDto, Roles role) {
+	public String deleteRole(AddDeleteRoleDto addDeleteRoleDto, Role role) {
 		String response;
 		role.setAuthority(addDeleteRoleDto.getRole());
 		try {
-			Optional<Users> optionalUser = userRepository.findByUsername(addDeleteRoleDto.getUsername());
+			Optional<User> optionalUser = userRepository.findByUsername(addDeleteRoleDto.getUsername());
 			if (optionalUser.isPresent()) {
-				Users userByUsername = optionalUser.get();
+				User userByUsername = optionalUser.get();
 				boolean isExist = userByUsername
 						.getAuthorities()
 						.stream()

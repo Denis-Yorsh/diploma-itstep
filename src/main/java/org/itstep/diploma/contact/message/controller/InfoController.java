@@ -1,8 +1,8 @@
-package org.itstep.diploma.info.controller;
+package org.itstep.diploma.contact.message.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.info.entity.ContactMessage;
-import org.itstep.diploma.info.service.ContactService;
+import org.itstep.diploma.contact.message.entity.ContactMessage;
+import org.itstep.diploma.contact.message.service.ContactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

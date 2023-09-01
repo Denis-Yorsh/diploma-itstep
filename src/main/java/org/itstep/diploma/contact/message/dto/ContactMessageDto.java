@@ -1,4 +1,4 @@
-package org.itstep.diploma.info.dto;
+package org.itstep.diploma.contact.message.dto;
 
 import lombok.Data;
 

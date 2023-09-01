@@ -1,8 +1,8 @@
-package org.itstep.diploma.info.service;
+package org.itstep.diploma.contact.message.service;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.info.entity.ContactMessage;
-import org.itstep.diploma.info.repository.ContactMessageRepository;
+import org.itstep.diploma.contact.message.entity.ContactMessage;
+import org.itstep.diploma.contact.message.repository.ContactMessageRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
