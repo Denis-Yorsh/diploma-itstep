@@ -16,7 +16,7 @@ import java.util.Set;
 @Entity
 @Table(name = "user_table")
 @Data
-@EqualsAndHashCode(exclude = {"id", "authorities", "usersRegistration"})
+@EqualsAndHashCode(exclude = {"id", "authorities", "userRegistration"})
 @ToString
 @Component
 @Scope(scopeName = "prototype")
