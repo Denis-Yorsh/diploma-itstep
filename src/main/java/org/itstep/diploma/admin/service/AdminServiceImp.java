@@ -7,6 +7,8 @@ import org.itstep.diploma.configs.security.entity.User;
 import org.itstep.diploma.configs.security.repository.UserRepository;
 import org.itstep.diploma.contact.message.entity.ContactMessage;
 import org.itstep.diploma.contact.message.repository.ContactMessageRepository;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,9 +17,11 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 	private final UserRepository userRepository;
 	private final ContactMessageRepository contactMessageRepository;
+	private final Role role;
 
 	@Transactional(readOnly = true)
 	@Override
@@ -41,7 +45,7 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 
 	@Transactional
 	@Override
-	public String addRole(AddDeleteRoleDto addDeleteRoleDto, Role role) {
+	public String addRole(AddDeleteRoleDto addDeleteRoleDto) {
 		String response;
 		role.setAuthority(addDeleteRoleDto.getRole());
 		try {
@@ -68,7 +72,7 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 
 	@Transactional
 	@Override
-	public String deleteRole(AddDeleteRoleDto addDeleteRoleDto, Role role) {
+	public String deleteRole(AddDeleteRoleDto addDeleteRoleDto) {
 		String response;
 		role.setAuthority(addDeleteRoleDto.getRole());
 		try {
