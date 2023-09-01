@@ -20,7 +20,8 @@
             <a th:href="@{/login}">LogIn</a>
             <a th:href="@{/registration}">Welcome guest</a>
         </th:block>
-        <th:block th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
+        <th:block
+                th:if="${!#authorization.expression('hasRole(''ROLE_ADMIN'')') && #authorization.expression('hasRole(''ROLE_USER'')')}">
             <a th:href="@{/logout}">LogOut</a>
             <a th:href="@{/userPage/homePage}">
                 <th:block th:text="'Welcome ' + ${#authentication.getName()}"></th:block>
@@ -87,7 +88,7 @@
                             <div class="u-align-center-xl u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-4">
                                 <div class="u-container-layout u-valign-bottom u-container-layout-4">
                                     <img class="u-expand-resize u-expanded-width u-image u-image-1"
-                                         th:src="@{../images/aboutUsPage/min.png}">
+                                         th:src="@{../images/aboutUsPage/min.png}" alt="img">
                                 </div>
                             </div>
                         </div>
@@ -96,5 +97,6 @@
             </div>
         </div>
     </div>
- </body>
+</section>
+</body>
 </html>

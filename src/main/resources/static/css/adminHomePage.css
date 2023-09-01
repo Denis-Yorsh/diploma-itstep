@@ -40,8 +40,8 @@ main nav a {
 /*--------------------------------------------------- Table */
 
 table {
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 99%;
+    max-width: 99%;
 }
 
 td {

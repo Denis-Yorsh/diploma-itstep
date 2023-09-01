@@ -43,7 +43,7 @@
 <main class="dk-container">
     <th:block th:if="${post}">
         <div class="title" th:text="${post.getPostTitle()}"></div>
-        <img th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}">
+        <img th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}" alt="img">
         <div class="date-of-post" th:text="${post.getDateOfPost()}"></div>
         <div class="author" th:text="${post.getAuthor()}"></div>
         <p class="text-of-post" th:text="${post.getTextOfPost()}"></p>

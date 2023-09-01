@@ -22,7 +22,7 @@
     <th:block th:each="post : ${allPosts}">
         <tr>
             <td th:text="*{post.getId()}"></td>
-            <td><img class="image" th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}"></td>
+            <td><img class="image" th:src="@{../image/getImage/{id} (id=*{post.getImage().getFindImage()})}" alt="img"></td>
             <td th:text="*{post.getPostTitle()}"></td>
             <td th:text="*{post.getAuthor()}"></td>
             <td th:text="*{post.getTextOfPost()}"></td>
