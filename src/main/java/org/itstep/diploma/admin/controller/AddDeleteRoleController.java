@@ -3,7 +3,7 @@ package org.itstep.diploma.admin.controller;
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.admin.dto.AddDeleteRoleDto;
 import org.itstep.diploma.admin.service.AddDeleteRoleService;
-import org.itstep.diploma.configs.security.entity.Roles;
+import org.itstep.diploma.configs.security.entity.Role;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -27,7 +27,7 @@ public class AddDeleteRoleController {
 
 	@ResponseBody
 	@PostMapping("/addRole")
-	public String addRole(@Validated AddDeleteRoleDto addDeleteRoleDto, BindingResult bindingResult, Roles role) {
+	public String addRole(@Validated AddDeleteRoleDto addDeleteRoleDto, BindingResult bindingResult, Role role) {
 		if (bindingResult.hasErrors()) {
 			return Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage();
 		}
@@ -38,7 +38,7 @@ public class AddDeleteRoleController {
 
 	@ResponseBody
 	@DeleteMapping("/deleteRole")
-	public String deleteRole(@Validated AddDeleteRoleDto addDeleteRoleDto, BindingResult bindingResult, Roles role) {
+	public String deleteRole(@Validated AddDeleteRoleDto addDeleteRoleDto, BindingResult bindingResult, Role role) {
 		if (bindingResult.hasErrors()) {
 			return Objects.requireNonNull(bindingResult.getFieldError()).getDefaultMessage();
 		}

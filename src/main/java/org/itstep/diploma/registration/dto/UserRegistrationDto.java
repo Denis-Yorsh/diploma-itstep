@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.Length;
 import java.time.LocalDate;
 
 @Data
-public final class UsersRegistrationDto {
+public final class UserRegistrationDto {
 	@Length(min = 3, max = 20, message = "length must be from 3 to 20")
 	@NotBlank(message = "field must be no blank")
 	private String firstName;

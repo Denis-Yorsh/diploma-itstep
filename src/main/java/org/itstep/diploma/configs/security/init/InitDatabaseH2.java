@@ -1,10 +1,10 @@
 package org.itstep.diploma.configs.security.init;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.configs.security.entity.Roles;
-import org.itstep.diploma.configs.security.entity.Users;
+import org.itstep.diploma.configs.security.entity.Role;
+import org.itstep.diploma.configs.security.entity.User;
 import org.itstep.diploma.configs.security.repository.UserRepository;
-import org.itstep.diploma.registration.entity.UsersRegistration;
+import org.itstep.diploma.registration.entity.UserRegistration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
@@ -18,14 +18,14 @@ import org.springframework.transaction.annotation.Transactional;
 public class InitDatabaseH2 implements CommandLineRunner {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
-	private final Users userAdmin;
-	private final Users userUser;
-	private final UsersRegistration usersRegistrationAdmin;
-	private final UsersRegistration usersRegistrationUser;
-	private final Roles roleAdminForAdmin;
-	private final Roles roleWriterForAdmin;
-	private final Roles roleUserForAdmin;
-	private final Roles rolUserForUser;
+	private final User userAdmin;
+	private final User userUser;
+	private final UserRegistration userRegistrationAdmin;
+	private final UserRegistration userRegistrationUser;
+	private final Role roleAdminForAdmin;
+	private final Role roleWriterForAdmin;
+	private final Role roleUserForAdmin;
+	private final Role rolUserForUser;
 	@Value("${spring.security.test.admin.password:admin}")
 	private String adminPassword;
 	@Value("${spring.security.test.admin.email:test_admin@test.com}")
@@ -45,8 +45,8 @@ public class InitDatabaseH2 implements CommandLineRunner {
 		roleUserForAdmin.setAuthority("ROLE_USER");
 		rolUserForUser.setAuthority("ROLE_USER");
 
-		usersRegistrationAdmin.setEmail(adminEmail);
-		usersRegistrationUser.setEmail(userEmail);
+		userRegistrationAdmin.setEmail(adminEmail);
+		userRegistrationUser.setEmail(userEmail);
 
 		userAdmin.setUsername("admin");
 		userAdmin.setPassword(passwordEncoder.encode(adminPassword));
@@ -57,8 +57,8 @@ public class InitDatabaseH2 implements CommandLineRunner {
 		userRepository.save(userUser);
 
 		userAdmin.addRole(roleAdminForAdmin, roleWriterForAdmin, roleUserForAdmin);
-		userAdmin.addUsersRegistration(usersRegistrationAdmin);
+		userAdmin.addUsersRegistration(userRegistrationAdmin);
 		userUser.addRole(rolUserForUser);
-		userUser.addUsersRegistration(usersRegistrationUser);
+		userUser.addUsersRegistration(userRegistrationUser);
 	}
 }

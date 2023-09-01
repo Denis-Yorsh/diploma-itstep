@@ -2,9 +2,9 @@ package org.itstep.diploma.admin.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.admin.service.AdminService;
-import org.itstep.diploma.info.dto.ContactMessageDto;
-import org.itstep.diploma.info.entity.ContactMessage;
-import org.itstep.diploma.info.service.ContactService;
+import org.itstep.diploma.contact.message.dto.ContactMessageDto;
+import org.itstep.diploma.contact.message.entity.ContactMessage;
+import org.itstep.diploma.contact.message.service.ContactService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,7 +21,7 @@ public class ContactMessageController {
 
 	@PostMapping("/getAllContactMessages")
 	public String getAll(Model model) {
-		Optional<List<ContactMessage>> allMessages = adminService.getAll();
+		Optional<List<ContactMessage>> allMessages = adminService.getAllContactMessage();
 		allMessages.ifPresent(contactMessages -> model.addAttribute("allContactMessages", contactMessages));
 		return "admin/getAllContactMessages";
 	}
@@ -29,7 +29,7 @@ public class ContactMessageController {
 	@DeleteMapping("/delete")
 	public String deleteMessage(ContactMessageDto contactMessageDto, Model model) {
 		contactService.deleteContactMessage(contactMessageDto.getId());
-		Optional<List<ContactMessage>> allMessages = adminService.getAll();
+		Optional<List<ContactMessage>> allMessages = adminService.getAllContactMessage();
 		allMessages.ifPresent(contactMessages -> model.addAttribute("allContactMessages", contactMessages));
 		return "admin/getAllContactMessages";
 	}

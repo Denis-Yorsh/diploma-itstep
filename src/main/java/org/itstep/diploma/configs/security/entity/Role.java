@@ -8,12 +8,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "roles_table")
+@Table(name = "role_table")
 @Data
 @EqualsAndHashCode(exclude = {"id", "user"})
 @Component
 @Scope(scopeName = "prototype")
-public final class Roles implements GrantedAuthority {
+public final class Role implements GrantedAuthority {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "role_id")
@@ -22,5 +22,5 @@ public final class Roles implements GrantedAuthority {
 	private String authority;
 	@ManyToOne
 	@JoinColumn(name = "fk_user_id", nullable = false)
-	private Users user;
+	private User user;
 }

@@ -1,11 +1,11 @@
-package org.itstep.diploma.info.entity;
+package org.itstep.diploma.contact.message.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "contact_massage_table")
+@Table(name = "contact_message_table")
 @Data
 @Component
 public final class ContactMessage {
