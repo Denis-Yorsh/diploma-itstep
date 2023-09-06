@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.itstep.diploma.blog.post.entity.Post;
 import org.itstep.diploma.registration.entity.UserRegistration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +17,7 @@ import java.util.Set;
 @Entity
 @Table(name = "user_table")
 @Data
-@EqualsAndHashCode(exclude = {"id", "authorities", "userRegistration"})
+@EqualsAndHashCode(exclude = {"id", "authorities", "userRegistration", "posts"})
 @ToString
 @Component
 @Scope(scopeName = "prototype")
@@ -25,7 +26,7 @@ public final class User implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	private Long id;
-	@Column(name = "user_name", unique = true)
+	@Column(name = "user_name", length = 50, unique = true)
 	private String username;
 	private String password;
 	@Column(name = "account_non_expired")
@@ -39,6 +40,8 @@ public final class User implements UserDetails {
 	private Set<Role> authorities = new HashSet<>();
 	@OneToOne(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private UserRegistration userRegistration;
+	@OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	private Set<Post> posts = new HashSet<>();
 
 	public void addRole(Role... roles) {
 		Arrays.stream(roles).forEach(role -> {
@@ -62,5 +65,15 @@ public final class User implements UserDetails {
 			userRegistration.setUser(null);
 			this.userRegistration = null;
 		}
+	}
+
+	public void addPost(Post post) {
+		posts.add(post);
+		post.setUser(this);
+	}
+
+	public void removePost(Post post) {
+		posts.remove(post);
+		post.setUser(null);
 	}
 }

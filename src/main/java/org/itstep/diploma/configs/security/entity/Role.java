@@ -18,7 +18,7 @@ public final class Role implements GrantedAuthority {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "role_id")
 	private Long id;
-	@Column(name = "role")
+	@Column(name = "role", length = 50)
 	private String authority;
 	@ManyToOne
 	@JoinColumn(name = "fk_user_id", nullable = false)

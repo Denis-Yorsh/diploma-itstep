@@ -2,8 +2,8 @@ package org.itstep.diploma.blog.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.blog.service.BlogService;
-import org.itstep.diploma.post.dto.PostDto;
-import org.itstep.diploma.post.entity.Post;
+import org.itstep.diploma.blog.post.dto.PostDto;
+import org.itstep.diploma.blog.post.entity.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

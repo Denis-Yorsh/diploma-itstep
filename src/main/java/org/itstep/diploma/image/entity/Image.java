@@ -3,7 +3,7 @@ package org.itstep.diploma.image.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.itstep.diploma.post.entity.Post;
+import org.itstep.diploma.blog.post.entity.Post;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -15,11 +15,11 @@ public final class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false)
+	@Column(length = 50, nullable = false)
 	private String name;
-	@Column(name = "original_filename", nullable = false)
+	@Column(name = "original_filename", length = 50, nullable = false)
 	private String originalFilename;
-	@Column(name = "content_type", nullable = false)
+	@Column(name = "content_type", length = 50, nullable = false)
 	private String contentType;
 	@Column(nullable = false)
 	private Long size;

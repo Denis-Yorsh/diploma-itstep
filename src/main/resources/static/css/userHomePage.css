@@ -71,6 +71,7 @@ button {
 
 .image {
     max-width: 10vw;
+    min-width: 10vw;
 }
 
 table {

@@ -8,7 +8,10 @@
     <link rel="stylesheet" th:href="@{../css/nicepage.css}" media="screen"/>
     <link rel="stylesheet" th:href="@{../css/userHomePage.css}" media="screen">
     <script th:src="@{../js/jquery-3.7.0.min.js}"></script>
-    <script class="script" th:src="@{../js/userHomePage.js}"></script>
+    <th:block th:if="${#authorization.expression('hasRole(''ROLE_WRITER'')')}">
+        <script th:src="@{../js/post.js}"></script>
+    </th:block>
+    <script th:src="@{../js/userHomePage.js}"></script>
     <title>User page</title>
 
 </head>
