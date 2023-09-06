@@ -14,7 +14,7 @@ public final class ContactMessage {
 	private Long id;
 	@Column(length = 50, nullable = false)
 	private String name;
-	@Column(nullable = false)
+	@Column(length = 100, nullable = false)
 	private String email;
 	@Column(length = 1000, nullable = false)
 	private String massage;

@@ -1,7 +1,7 @@
 package org.itstep.diploma.blog.service;
 
-import org.itstep.diploma.post.dto.PostDto;
-import org.itstep.diploma.post.entity.Post;
+import org.itstep.diploma.blog.post.dto.PostDto;
+import org.itstep.diploma.blog.post.entity.Post;
 
 import java.util.List;
 import java.util.Optional;

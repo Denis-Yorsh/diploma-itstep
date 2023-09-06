@@ -1,9 +1,9 @@
 package org.itstep.diploma.blog.service;
 
 import lombok.RequiredArgsConstructor;
-import org.itstep.diploma.post.dto.PostDto;
-import org.itstep.diploma.post.entity.Post;
-import org.itstep.diploma.post.repository.PostRepository;
+import org.itstep.diploma.blog.post.dto.PostDto;
+import org.itstep.diploma.blog.post.entity.Post;
+import org.itstep.diploma.blog.post.repository.PostRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

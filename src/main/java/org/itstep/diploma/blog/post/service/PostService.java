@@ -1,8 +1,8 @@
-package org.itstep.diploma.post.service;
+package org.itstep.diploma.blog.post.service;
 
 import org.itstep.diploma.image.entity.Image;
-import org.itstep.diploma.post.dto.PostDto;
-import org.itstep.diploma.post.entity.Post;
+import org.itstep.diploma.blog.post.dto.PostDto;
+import org.itstep.diploma.blog.post.entity.Post;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,4 +1,4 @@
-package org.itstep.diploma.post.dto;
+package org.itstep.diploma.blog.post.dto;
 
 import lombok.Data;
 

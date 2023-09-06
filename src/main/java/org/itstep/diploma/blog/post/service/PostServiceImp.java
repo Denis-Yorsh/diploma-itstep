@@ -1,10 +1,12 @@
-package org.itstep.diploma.post.service;
+package org.itstep.diploma.blog.post.service;
 
 import lombok.RequiredArgsConstructor;
+import org.itstep.diploma.blog.post.dto.PostDto;
+import org.itstep.diploma.blog.post.entity.Post;
+import org.itstep.diploma.blog.post.repository.PostRepository;
+import org.itstep.diploma.configs.security.entity.User;
+import org.itstep.diploma.configs.security.repository.UserRepository;
 import org.itstep.diploma.image.entity.Image;
-import org.itstep.diploma.post.dto.PostDto;
-import org.itstep.diploma.post.entity.Post;
-import org.itstep.diploma.post.repository.PostRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class PostServiceImp implements PostService {
+	private final UserRepository userRepository;
 	private final PostRepository postRepository;
 
 	@Transactional
@@ -25,15 +28,22 @@ public class PostServiceImp implements PostService {
 						  PostDto postDto,
 						  Post post,
 						  Image image,
-						  Authentication authentication){
+						  Authentication authentication) {
 		String response;
 		try {
+			Optional<User> optionalUserByUsername = userRepository.findByUsername(authentication.getName());
+			if (optionalUserByUsername.isEmpty()) {
+				response = "YOU MUST RESTART YOUR ACCOUNT PLEASE";
+				return response;
+			}
+			User user = optionalUserByUsername.get();
 			post.setPostTitle(postDto.getPostTitle());
-			post.setAuthor(authentication.getName());
+			post.setAuthor(user.getUsername());
 			post.setTextOfPost(postDto.getTextOfPost());
 			post.setDateOfPost(LocalDate.now());
 
-			postRepository.save(post);
+			user.addPost(post);
+			userRepository.flush();
 
 			image.setName(multipartFile.getName());
 			image.setOriginalFilename(multipartFile.getOriginalFilename());

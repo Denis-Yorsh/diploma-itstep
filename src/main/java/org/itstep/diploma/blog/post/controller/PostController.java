@@ -1,10 +1,10 @@
-package org.itstep.diploma.post.controller;
+package org.itstep.diploma.blog.post.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.itstep.diploma.image.entity.Image;
-import org.itstep.diploma.post.dto.PostDto;
-import org.itstep.diploma.post.entity.Post;
-import org.itstep.diploma.post.service.PostService;
+import org.itstep.diploma.blog.post.dto.PostDto;
+import org.itstep.diploma.blog.post.entity.Post;
+import org.itstep.diploma.blog.post.service.PostService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
