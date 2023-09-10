@@ -23,6 +23,7 @@
 ![registration.jpeg](images%2Fregistration.jpeg)
 ![registration_validation.jpeg](images%2Fregistration_validation.jpeg)
 ![contact_message_page.jpeg](images%2Fcontact_message_page.jpeg)
+![error_page.jpeg](images%2Ferror_page.jpeg)
 ## Adaptive site
 ![adaptive_site_1.jpg](images%2Fadaptive_site_1.jpg)
 ![adaptive_site_2.jpg](images%2Fadaptive_site_2.jpg)
