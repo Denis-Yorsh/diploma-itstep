@@ -19,19 +19,18 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-@Scope(scopeName = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @RequiredArgsConstructor
 public class UserRegistrationServiceImp implements UserRegistrationService {
 	private final UserRepository userRepository;
 	private final UserRegistrationRepository userRegistrationRepository;
-	private final User user;
-	private final Role role;
-	private final UserRegistration userRegistration;
 	private final PasswordEncoder passwordEncoder;
 
 	@Transactional
 	@Override
-	public void createUser(UserRegistrationDto userRegistrationDto) {
+	public void createUser(UserRegistrationDto userRegistrationDto,
+						   User user,
+						   Role role,
+						   UserRegistration userRegistration) {
 		user.setUsername(userRegistrationDto.getUsername());
 		user.setPassword(passwordEncoder.encode(userRegistrationDto.getPassword()));
 		role.setAuthority("ROLE_USER");

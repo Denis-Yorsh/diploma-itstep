@@ -1,7 +1,10 @@
 package org.itstep.diploma.registration.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.itstep.diploma.configs.security.entity.Role;
+import org.itstep.diploma.configs.security.entity.User;
 import org.itstep.diploma.registration.dto.UserRegistrationDto;
+import org.itstep.diploma.registration.entity.UserRegistration;
 import org.itstep.diploma.registration.servise.UserRegistrationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +30,10 @@ public class RegistrationController {
 	public String registrationPost(@ModelAttribute("usersRegistration")
 								   @Validated UserRegistrationDto userRegistrationDto,
 								   BindingResult bindingResult,
-								   Model model) {
+								   Model model,
+								   User user,
+								   Role role,
+								   UserRegistration userRegistration) {
 		if (bindingResult.hasErrors()) {
 			checkUserNameAndEmail(userRegistrationDto, model);
 			checkPasswords(userRegistrationDto, model);
@@ -40,7 +46,7 @@ public class RegistrationController {
 		if (checkPasswords(userRegistrationDto, model)) {
 			return "registration";
 		}
-		userRegistrationService.createUser(userRegistrationDto);
+		userRegistrationService.createUser(userRegistrationDto, user, role, userRegistration);
 		return "redirect:login";
 	}
 

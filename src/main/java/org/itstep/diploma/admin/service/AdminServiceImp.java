@@ -36,7 +36,7 @@ public class AdminServiceImp implements AdminService, AddDeleteRoleService {
 	@Transactional(readOnly = true)
 	@Override
 	public Optional<List<User>> getAllUsers() {
-		List<User> allUsers = userRepository.findAll();
+		List<User> allUsers = userRepository.findAllUsers();
 		if (allUsers.isEmpty()) {
 			return Optional.empty();
 		}
