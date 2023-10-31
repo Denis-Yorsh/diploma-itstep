@@ -18,7 +18,7 @@ import java.util.Set;
 @Table(name = "user_table")
 @Data
 @EqualsAndHashCode(exclude = {"id", "authorities", "userRegistration", "posts"})
-@ToString
+@ToString(exclude = {"authorities", "userRegistration", "posts"})
 @Component
 @Scope(scopeName = "prototype")
 public final class User implements UserDetails {
@@ -36,11 +36,11 @@ public final class User implements UserDetails {
 	@Column(name = "credentials_non_expired")
 	private boolean credentialsNonExpired;
 	private boolean enabled;
-	@OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
 	private Set<Role> authorities = new HashSet<>();
-	@OneToOne(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
 	private UserRegistration userRegistration;
-	@OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	private Set<Post> posts = new HashSet<>();
 
 	public void addRole(Role... roles) {
